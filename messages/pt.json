@@ -54,30 +54,53 @@
   },
   "quests": {
     "logTitle": "Registro de Missões",
-    "main": "Missões Principais",
-    "side": "Missões Secundárias",
+    "sectionMain": "Missões Principais",
+    "sectionSide": "Missões Secundárias",
     "empty": "Nenhuma missão ativa.",
     "completed": "Concluída",
-    "main.awaken.title": "Desperte como Jogador",
-    "main.awaken.desc": "Complete a tela de entrada.",
-    "main.firstGate.title": "Explore o primeiro Gate",
-    "main.firstGate.desc": "Abra um projeto.",
-    "main.analyzeDungeon.title": "Analise uma Dungeon",
-    "main.analyzeDungeon.desc": "Leia os detalhes técnicos de um projeto.",
-    "main.skills.title": "Domine suas habilidades",
-    "main.skills.desc": "Visite a Skill Tree.",
-    "main.boss.title": "Enfrente o Boss",
-    "main.boss.desc": "Desbloqueie e abra o projeto Rank S.",
-    "main.summon.title": "Convoque o Hunter",
-    "main.summon.desc": "Chegue na seção de contato.",
-    "side.polyglot.title": "Poliglota",
-    "side.polyglot.desc": "Troque o idioma do Sistema.",
-    "side.silentHunter.title": "Caçador silencioso",
-    "side.silentHunter.desc": "Mute e desmute o som.",
-    "side.explorer.title": "Explorador",
-    "side.explorer.desc": "Visite todas as seções.",
-    "side.monarchSecret.title": "Segredo do Monarca",
-    "side.monarchSecret.desc": "Encontre o easter egg escondido."
+    "reward": "+{xp} XP",
+    "items": {
+      "awaken": {
+        "title": "Desperte como Jogador",
+        "desc": "Complete a tela de entrada."
+      },
+      "firstGate": {
+        "title": "Explore o primeiro Gate",
+        "desc": "Abra um projeto."
+      },
+      "analyzeDungeon": {
+        "title": "Analise uma Dungeon",
+        "desc": "Leia os detalhes técnicos de um projeto."
+      },
+      "skills": {
+        "title": "Domine suas habilidades",
+        "desc": "Visite a Skill Tree."
+      },
+      "boss": {
+        "title": "Enfrente o Boss",
+        "desc": "Desbloqueie e abra o projeto Rank S."
+      },
+      "summon": {
+        "title": "Convoque o Hunter",
+        "desc": "Chegue na seção de contato."
+      },
+      "polyglot": {
+        "title": "Poliglota",
+        "desc": "Troque o idioma do Sistema."
+      },
+      "silentHunter": {
+        "title": "Caçador silencioso",
+        "desc": "Mute e desmute o som."
+      },
+      "explorer": {
+        "title": "Explorador",
+        "desc": "Visite todas as seções."
+      },
+      "monarchSecret": {
+        "title": "Segredo do Monarca",
+        "desc": "Encontre o easter egg escondido."
+      }
+    }
   },
   "boot": {
     "detecting": "Detectando qualificação do visitante...",

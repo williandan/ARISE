@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { HomeActions } from "@/components/home/HomeActions";
 
 // Escada de ranks E→S — exercita os tokens de cor e o glow do design system.
 const RANKS = ["e", "d", "c", "b", "a", "s"] as const;
@@ -54,20 +55,7 @@ export default async function Home() {
           ))}
         </ul>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <button
-            type="button"
-            className="glow-cyan bg-system-cyan/10 text-system-cyan hover:bg-system-cyan/20 font-display rounded-md px-6 py-3 font-semibold tracking-wide transition-colors"
-          >
-            {t("enter")}
-          </button>
-          <button
-            type="button"
-            className="text-ink-dim hover:text-ink font-display rounded-md px-6 py-3 font-medium tracking-wide transition-colors"
-          >
-            {t("skipToContent")}
-          </button>
-        </div>
+        <HomeActions />
       </div>
     </main>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rajdhani, Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
+import { SystemProvider } from "@/components/providers/SystemProvider";
 import "./globals.css";
 
 // Display sci-fi (títulos / UI do Sistema)
@@ -40,6 +41,7 @@ export default async function RootLayout({
       <body className="bg-bg-base text-ink flex min-h-full flex-col font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <SystemProvider />
         </NextIntlClientProvider>
       </body>
     </html>

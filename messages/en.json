@@ -54,30 +54,53 @@
   },
   "quests": {
     "logTitle": "Quest Log",
-    "main": "Main Quests",
-    "side": "Side Quests",
+    "sectionMain": "Main Quests",
+    "sectionSide": "Side Quests",
     "empty": "No active quests.",
     "completed": "Completed",
-    "main.awaken.title": "Awaken as a Player",
-    "main.awaken.desc": "Complete the entry screen.",
-    "main.firstGate.title": "Explore the first Gate",
-    "main.firstGate.desc": "Open a project.",
-    "main.analyzeDungeon.title": "Analyze a Dungeon",
-    "main.analyzeDungeon.desc": "Read a project's technical details.",
-    "main.skills.title": "Master your skills",
-    "main.skills.desc": "Visit the Skill Tree.",
-    "main.boss.title": "Face the Boss",
-    "main.boss.desc": "Unlock and open the Rank S project.",
-    "main.summon.title": "Summon the Hunter",
-    "main.summon.desc": "Reach the contact section.",
-    "side.polyglot.title": "Polyglot",
-    "side.polyglot.desc": "Switch the System's language.",
-    "side.silentHunter.title": "Silent Hunter",
-    "side.silentHunter.desc": "Mute and unmute the sound.",
-    "side.explorer.title": "Explorer",
-    "side.explorer.desc": "Visit every section.",
-    "side.monarchSecret.title": "The Monarch's Secret",
-    "side.monarchSecret.desc": "Find the hidden easter egg."
+    "reward": "+{xp} XP",
+    "items": {
+      "awaken": {
+        "title": "Awaken as a Player",
+        "desc": "Complete the entry screen."
+      },
+      "firstGate": {
+        "title": "Explore the first Gate",
+        "desc": "Open a project."
+      },
+      "analyzeDungeon": {
+        "title": "Analyze a Dungeon",
+        "desc": "Read a project's technical details."
+      },
+      "skills": {
+        "title": "Master your skills",
+        "desc": "Visit the Skill Tree."
+      },
+      "boss": {
+        "title": "Face the Boss",
+        "desc": "Unlock and open the Rank S project."
+      },
+      "summon": {
+        "title": "Summon the Hunter",
+        "desc": "Reach the contact section."
+      },
+      "polyglot": {
+        "title": "Polyglot",
+        "desc": "Switch the System's language."
+      },
+      "silentHunter": {
+        "title": "Silent Hunter",
+        "desc": "Mute and unmute the sound."
+      },
+      "explorer": {
+        "title": "Explorer",
+        "desc": "Visit every section."
+      },
+      "monarchSecret": {
+        "title": "The Monarch's Secret",
+        "desc": "Find the hidden easter egg."
+      }
+    }
   },
   "boot": {
     "detecting": "Detecting visitor qualification...",
