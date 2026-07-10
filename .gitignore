@@ -32,3 +32,9 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Testes / cobertura
+/coverage
+
+# Certificados
+*.pem
