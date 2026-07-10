@@ -9,10 +9,13 @@
 ```
 Design an immersive developer portfolio website inspired by the "System" UI from the anime/manhwa Solo Leveling. This is a full-stack developer's portfolio (name: Willian Daniel) where the VISITOR is the player: they gain XP and level up by navigating the site, unlocking higher-ranked "Gates" (projects) as they progress.
 
+CORE VISUAL IDEA — a color journey from blue to purple that mirrors the visitor leveling up from E-rank to S-rank:
+- Low ranks / early state: electric cyan-blue (#4EA8FF / #38BDF8) — the classic Solo Leveling "System window" blue, with soft glow.
+- High ranks / S-rank / powered-up state: monarch purple (#8B5CF6 to #6D28D9), darker and more powerful.
+- The HUD, XP bar, and accents should visibly shift from blue toward purple as rank increases.
+
 VISUAL STYLE:
 - Dark, cinematic sci-fi "System" interface. Deep near-black navy background (#05060A to #0A0E1A).
-- Primary accent: electric cyan-blue (#4EA8FF / #38BDF8) with a soft glow, like the classic Solo Leveling blue notification windows.
-- Secondary accent: monarch purple (#8B5CF6 to #6D28D9) for the highest "S-rank" elements.
 - Rank accent colors: E=gray, D=green, C=blue, B=purple, A=orange, S=red/gold.
 - UI panels look like holographic "System windows": glowing cyan borders, subtle glassmorphism, chamfered/angular corners, faint scanlines and particles.
 - Typography: geometric sci-fi display font (like Rajdhani, Orbitron, or Chakra Petch) for titles and UI; clean readable font (like Inter) for body text.

@@ -32,3 +32,12 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Testes / cobertura
+/coverage
+
+# Certificados
+*.pem
+
+# Config local do Claude Code (permissões da máquina)
+.claude/settings.local.json

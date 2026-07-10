@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/*
+  ARISE — Design System (Solo Leveling / "Sistema")
+  Tokens de cor, tipografia e utilidades de glow.
+  Ref.: CLAUDE.md ("Design system") e docs/PLANO.md (seção 7).
+*/
+
+@theme {
+  /* ---- Fundos (preto / azul-noite) ---- */
+  --color-bg-base: #05060a; /* fundo principal */
+  --color-bg-elevated: #0a0e1a; /* superfícies elevadas */
+  --color-bg-panel: #0d1424; /* janelas do Sistema */
+
+  /* ---- Ciano do Sistema (visitante — nasce E-rank azul) ---- */
+  --color-system-cyan: #38bdf8;
+  --color-system-cyan-bright: #4ea8ff;
+
+  /* ---- Roxo Monarca (Willian — S-rank fixo) ---- */
+  --color-monarch: #8b5cf6;
+  --color-monarch-deep: #6d28d9;
+
+  /* ---- Texto (branco levemente azulado) ---- */
+  --color-ink: #e6edf7;
+  --color-ink-dim: #9fb0c8;
+  --color-ink-faint: #5f6f88;
+
+  /* ---- Acentos de rank E–S ---- */
+  --color-rank-e: #9ca3af; /* cinza */
+  --color-rank-d: #22c55e; /* verde */
+  --color-rank-c: #38bdf8; /* azul */
+  --color-rank-b: #8b5cf6; /* roxo */
+  --color-rank-a: #f59e0b; /* laranja */
+  --color-rank-s: #fbbf24; /* dourado (com toque vermelho) */
+
+  /* ---- Tipografia ---- */
+  --font-display: var(--font-rajdhani), "Segoe UI", sans-serif; /* UI sci-fi */
+  --font-sans: var(--font-inter), system-ui, sans-serif; /* corpo legível */
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg-base);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Acessibilidade: respeitar prefers-reduced-motion globalmente.
+   Componentes também checam via hook, mas isto é a rede de segurança. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   Utilidades de "glow" (janelas azuis do Sistema)
+   ============================================================ */
+@utility glow-cyan {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color-system-cyan) 45%, transparent),
+    0 0 22px -2px color-mix(in srgb, var(--color-system-cyan) 55%, transparent);
+}
+
+@utility glow-purple {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color-monarch) 50%, transparent),
+    0 0 24px -2px color-mix(in srgb, var(--color-monarch) 60%, transparent);
+}
+
+/* Glow parametrizável pela cor de texto atual (ex.: cards de rank). */
+@utility glow-rank {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, currentColor 45%, transparent),
+    0 0 20px -2px color-mix(in srgb, currentColor 55%, transparent);
+}
+
+@utility text-glow-cyan {
+  text-shadow: 0 0 12px color-mix(in srgb, var(--color-system-cyan) 70%, transparent);
+}
+
+@utility text-glow-purple {
+  text-shadow: 0 0 12px color-mix(in srgb, var(--color-monarch) 70%, transparent);
+}

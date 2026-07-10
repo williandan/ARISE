@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "ARISE — Willian Daniel · Full-Stack Portfolio",
+    "description": "Willian Daniel's Solo Leveling-themed portfolio: level up by exploring the projects (Gates) and awaken as a Player."
+  },
+  "common": {
+    "language": "Language",
+    "languagePt": "Portuguese",
+    "languageEn": "English",
+    "close": "Close",
+    "skip": "Skip intro",
+    "yes": "Yes",
+    "no": "No",
+    "loading": "Loading the System..."
+  },
+  "ranks": {
+    "e": "Rank E",
+    "d": "Rank D",
+    "c": "Rank C",
+    "b": "Rank B",
+    "a": "Rank A",
+    "s": "Rank S"
+  },
+  "home": {
+    "kicker": "The System has noticed you",
+    "title": "ARISE",
+    "subtitle": "Willian Daniel's Full-Stack Portfolio",
+    "intro": "You have acquired the qualification to become a Player. Explore the Gates, earn XP and climb from Rank E to S.",
+    "enter": "Awaken as a Player",
+    "skipToContent": "Go straight to the projects"
+  },
+  "hud": {
+    "player": "Player",
+    "level": "Level",
+    "levelShort": "Lv.",
+    "rank": "Rank",
+    "xp": "XP",
+    "xpToNext": "{current} / {needed} XP",
+    "questLog": "Quest Log",
+    "sound": "Sound",
+    "soundOn": "Enable sound",
+    "soundOff": "Mute sound",
+    "muted": "Muted"
+  },
+  "system": {
+    "windowTitle": "SYSTEM",
+    "questComplete": "Quest complete",
+    "levelUp": "LEVEL UP",
+    "rankUp": "RANK UP",
+    "xpGained": "+{xp} XP",
+    "newLevel": "Level {level}",
+    "newRank": "Rank {rank}",
+    "welcomeBack": "Welcome back, Rank {rank} Player."
+  },
+  "quests": {
+    "logTitle": "Quest Log",
+    "sectionMain": "Main Quests",
+    "sectionSide": "Side Quests",
+    "empty": "No active quests.",
+    "completed": "Completed",
+    "reward": "+{xp} XP",
+    "items": {
+      "awaken": {
+        "title": "Awaken as a Player",
+        "desc": "Complete the entry screen."
+      },
+      "firstGate": {
+        "title": "Explore the first Gate",
+        "desc": "Open a project."
+      },
+      "analyzeDungeon": {
+        "title": "Analyze a Dungeon",
+        "desc": "Read a project's technical details."
+      },
+      "skills": {
+        "title": "Master your skills",
+        "desc": "Visit the Skill Tree."
+      },
+      "boss": {
+        "title": "Face the Boss",
+        "desc": "Unlock and open the Rank S project."
+      },
+      "summon": {
+        "title": "Summon the Hunter",
+        "desc": "Reach the contact section."
+      },
+      "polyglot": {
+        "title": "Polyglot",
+        "desc": "Switch the System's language."
+      },
+      "silentHunter": {
+        "title": "Silent Hunter",
+        "desc": "Mute and unmute the sound."
+      },
+      "explorer": {
+        "title": "Explorer",
+        "desc": "Visit every section."
+      },
+      "monarchSecret": {
+        "title": "The Monarch's Secret",
+        "desc": "Find the hidden easter egg."
+      }
+    }
+  },
+  "boot": {
+    "detecting": "Detecting visitor qualification...",
+    "prompt": "You have acquired the qualification to become a Player. Do you accept?",
+    "accept": "Yes",
+    "decline": "No",
+    "skip": "Skip intro"
+  }
+}
