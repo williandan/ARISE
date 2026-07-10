@@ -128,13 +128,11 @@
     "statsRank": "Rank",
     "rankPathTitle": "Rank Path",
     "you": "YOU",
-    "locked": "Locked",
     "hint": "Above is the Monarch (fixed S-rank). You are the Player in the HUD — climb from E to S by exploring the Gates."
   },
   "gates": {
     "title": "Gates",
     "subtitle": "Each project is a Dungeon ranked E–S. The stronger ones unlock as you level up.",
-    "locked": "Locked",
     "unlockAt": "Unlocks at Rank {rank} · Lv. {level}",
     "viewAnyway": "View anyway",
     "open": "Enter the Gate",
@@ -146,7 +144,7 @@
       "wip": "In progress",
       "live": "Live"
     },
-    "notFound": "Gate not found.",
+    "gateRank": "Gate {rank}",
     "analyzeCta": "Analyze the Dungeon",
     "analyzeDone": "Dungeon analyzed ✓",
     "analyzeHint": "Technical details and architecture decisions arrive when the Gate is built.",

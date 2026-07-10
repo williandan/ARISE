@@ -128,13 +128,11 @@
     "statsRank": "Rank",
     "rankPathTitle": "Rank Path",
     "you": "VOCÊ",
-    "locked": "Trancado",
     "hint": "Acima está o Monarca (S-rank fixo). Você é o Jogador no HUD — suba de E até S explorando os Gates."
   },
   "gates": {
     "title": "Gates",
     "subtitle": "Cada projeto é uma Dungeon com rank E–S. Os mais fortes se abrem conforme você sobe de nível.",
-    "locked": "Trancado",
     "unlockAt": "Abre no Rank {rank} · Nv. {level}",
     "viewAnyway": "Ver mesmo assim",
     "open": "Entrar no Gate",
@@ -146,7 +144,7 @@
       "wip": "Em construção",
       "live": "No ar"
     },
-    "notFound": "Gate não encontrado.",
+    "gateRank": "Gate {rank}",
     "analyzeCta": "Analisar Dungeon",
     "analyzeDone": "Dungeon analisada ✓",
     "analyzeHint": "Os detalhes técnicos e as decisões de arquitetura entram quando o Gate for construído.",

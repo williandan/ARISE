@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!gate) return {};
   const t = await getTranslations("gates");
   return {
-    title: `${t(`items.${gate.id}.name`)} · Gate ${gate.rank}`,
+    title: `${t(`items.${gate.id}.name`)} · ${t("gateRank", { rank: gate.rank })}`,
     description: t(`items.${gate.id}.summary`),
   };
 }

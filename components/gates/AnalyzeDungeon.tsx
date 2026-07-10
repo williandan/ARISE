@@ -11,10 +11,12 @@ import { useGameStore } from "@/store/gameStore";
 export function AnalyzeDungeon() {
   const t = useTranslations("gates");
   const completeQuest = useGameStore((s) => s.completeQuest);
-  const isQuestComplete = useGameStore((s) => s.isQuestComplete);
+  const hasHydrated = useGameStore((s) => s.hasHydrated);
+  const analyzed = useGameStore((s) => s.completedQuests.includes("analyzeDungeon"));
   const [open, setOpen] = useState(false);
 
-  const done = isQuestComplete("analyzeDungeon");
+  // Só reflete o estado persistido após reidratar (evita hydration mismatch no rótulo).
+  const done = hasHydrated && analyzed;
 
   function analyze() {
     setOpen(true);

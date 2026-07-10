@@ -12,7 +12,8 @@ import { RankBadge } from "@/components/ui/RankBadge";
  */
 export function RankPath() {
   const t = useTranslations("profile");
-  const level = useGameStore((s) => s.level);
+  // Antes de reidratar, assume nível 1 (igual ao SSR) — evita hydration mismatch.
+  const level = useGameStore((s) => (s.hasHydrated ? s.level : 1));
   const current = rankForLevel(level);
   const currentIdx = rankIndex(current);
 
