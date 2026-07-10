@@ -108,5 +108,145 @@
     "accept": "Yes",
     "decline": "No",
     "skip": "Skip intro"
+  },
+  "nav": {
+    "home": "Profile",
+    "gates": "Gates",
+    "skills": "Skills",
+    "about": "Story",
+    "contact": "Contact"
+  },
+  "profile": {
+    "role": "The Monarch — owner of this System",
+    "titles": {
+      "monarch": "MONARCH",
+      "sovereign": "SOVEREIGN",
+      "max": "MAX"
+    },
+    "statsGates": "Gates",
+    "statsSkills": "Skills",
+    "statsRank": "Rank",
+    "rankPathTitle": "Rank Path",
+    "you": "YOU",
+    "locked": "Locked",
+    "hint": "Above is the Monarch (fixed S-rank). You are the Player in the HUD — climb from E to S by exploring the Gates."
+  },
+  "gates": {
+    "title": "Gates",
+    "subtitle": "Each project is a Dungeon ranked E–S. The stronger ones unlock as you level up.",
+    "locked": "Locked",
+    "unlockAt": "Unlocks at Rank {rank} · Lv. {level}",
+    "viewAnyway": "View anyway",
+    "open": "Enter the Gate",
+    "back": "Back to Gates",
+    "techLabel": "Stack",
+    "statusLabel": "Status",
+    "status": {
+      "planned": "Planned",
+      "wip": "In progress",
+      "live": "Live"
+    },
+    "notFound": "Gate not found.",
+    "analyzeCta": "Analyze the Dungeon",
+    "analyzeDone": "Dungeon analyzed ✓",
+    "analyzeHint": "Technical details and architecture decisions arrive when the Gate is built.",
+    "items": {
+      "awakening": {
+        "name": "The Awakening",
+        "tagline": "Daily Quest Tracker",
+        "summary": "A gamified to-do app: tasks grant XP and the user levels up. Fundamentals of UI and local state."
+      },
+      "lesserPortal": {
+        "name": "The Lesser Portal",
+        "tagline": "REST API + CRUD with auth",
+        "summary": "A Node API with Express, JWT and full CRUD, consumed by a React front end. REST, auth and SQL — the full-stack staple."
+      },
+      "integrationDungeon": {
+        "name": "The Integration Dungeon",
+        "tagline": "External-API aggregator dashboard",
+        "summary": "A panel that unifies several external APIs in one place — Willian's home turf: systems integration."
+      },
+      "realtimeBattle": {
+        "name": "The Real-Time Battlefield",
+        "tagline": "WebSockets app",
+        "summary": "A live chat or dashboard with Socket.io. Real-time architecture that few portfolios show."
+      },
+      "automatedForge": {
+        "name": "The Automated Forge",
+        "tagline": "Report automation platform",
+        "summary": "Ingests data, generates and schedules automated reports. With Cypress tests and a CI/CD pipeline."
+      },
+      "finalBoss": {
+        "name": "The Final Boss",
+        "tagline": "Complete full-stack SaaS",
+        "summary": "Auth, database, robust Node back end, polished front end, E2E tests, CI/CD and deploy. The flagship that proves full-stack."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skill Tree",
+    "subtitle": "The Hunter's attributes, translated straight from the CV.",
+    "spellsTitle": "Unlocked spells",
+    "educationTitle": "Education (the Hunter's lore)",
+    "education": {
+      "ucb": "B.Sc. in Software Engineering — Catholic University of Brasília (2025–2028)",
+      "cubos": "Full Stack program — Cubos Academy (2023)"
+    },
+    "attrs": {
+      "str": {
+        "name": "STR · Back-end",
+        "desc": "APIs, servers and data."
+      },
+      "agi": {
+        "name": "AGI · Front-end",
+        "desc": "Interfaces in React and TypeScript."
+      },
+      "int": {
+        "name": "INT · Integrations & Automation",
+        "desc": "The highest attribute — connecting and automating systems."
+      },
+      "vit": {
+        "name": "VIT · Quality & DevOps",
+        "desc": "Testing, CI/CD and version control."
+      },
+      "per": {
+        "name": "PER · Data analysis",
+        "desc": "Automated reports and indicators."
+      }
+    },
+    "spells": {
+      "reduction90": {
+        "name": "90% Reduction",
+        "desc": "Automated account creation (Skymail/AD)."
+      },
+      "branchGuardian": {
+        "name": "Branch Guardian",
+        "desc": "Blocked 60% of non-compliant PRs via integration tests."
+      },
+      "artifactPurge": {
+        "name": "Artifact Purge",
+        "desc": "100% storage reduction on GitLab."
+      },
+      "monarchVision": {
+        "name": "Monarch's Vision",
+        "desc": "Sprint reports with 100% classification accuracy."
+      }
+    }
+  },
+  "about": {
+    "title": "The Hunter's Story",
+    "subtitle": "Willian Daniel's journey.",
+    "p1": "A full-stack developer focused on React and Node.js, with real strength in systems integration and process automation.",
+    "p2": "At RCS he connected services such as Microsoft Graph, TrueNAS, GLPI, TOTVS and Skymail, and automated routines that cut manual work and raised delivery quality.",
+    "p3": "A quality guardian: integration tests, Cypress and CI/CD to keep branches clean and reports accurate.",
+    "educationTitle": "Education"
+  },
+  "contact": {
+    "title": "Summon the Hunter",
+    "subtitle": "Shall we build something together?",
+    "emailLabel": "Email",
+    "githubLabel": "GitHub",
+    "cta": "Send an email",
+    "note": "The summoning form arrives in a later phase — for now, the call goes straight to email."
   }
 }

@@ -108,5 +108,145 @@
     "accept": "Sim",
     "decline": "Não",
     "skip": "Pular intro"
+  },
+  "nav": {
+    "home": "Perfil",
+    "gates": "Gates",
+    "skills": "Skills",
+    "about": "História",
+    "contact": "Contato"
+  },
+  "profile": {
+    "role": "O Monarca — dono deste Sistema",
+    "titles": {
+      "monarch": "MONARCH",
+      "sovereign": "SOVEREIGN",
+      "max": "MAX"
+    },
+    "statsGates": "Gates",
+    "statsSkills": "Skills",
+    "statsRank": "Rank",
+    "rankPathTitle": "Rank Path",
+    "you": "VOCÊ",
+    "locked": "Trancado",
+    "hint": "Acima está o Monarca (S-rank fixo). Você é o Jogador no HUD — suba de E até S explorando os Gates."
+  },
+  "gates": {
+    "title": "Gates",
+    "subtitle": "Cada projeto é uma Dungeon com rank E–S. Os mais fortes se abrem conforme você sobe de nível.",
+    "locked": "Trancado",
+    "unlockAt": "Abre no Rank {rank} · Nv. {level}",
+    "viewAnyway": "Ver mesmo assim",
+    "open": "Entrar no Gate",
+    "back": "Voltar aos Gates",
+    "techLabel": "Stack",
+    "statusLabel": "Status",
+    "status": {
+      "planned": "Planejado",
+      "wip": "Em construção",
+      "live": "No ar"
+    },
+    "notFound": "Gate não encontrado.",
+    "analyzeCta": "Analisar Dungeon",
+    "analyzeDone": "Dungeon analisada ✓",
+    "analyzeHint": "Os detalhes técnicos e as decisões de arquitetura entram quando o Gate for construído.",
+    "items": {
+      "awakening": {
+        "name": "O Despertar",
+        "tagline": "Daily Quest Tracker",
+        "summary": "App de tarefas gamificado: tarefas dão XP e o usuário sobe de nível. Fundamentos de UI e estado local."
+      },
+      "lesserPortal": {
+        "name": "O Portal Menor",
+        "tagline": "API REST + CRUD com autenticação",
+        "summary": "API Node com Express, JWT e CRUD completo, consumida por um front React. REST, autenticação e SQL — o feijão-com-arroz full-stack."
+      },
+      "integrationDungeon": {
+        "name": "A Dungeon de Integração",
+        "tagline": "Dashboard agregador de APIs externas",
+        "summary": "Painel que unifica várias APIs externas num só lugar — a praia do Willian: integrações de sistemas."
+      },
+      "realtimeBattle": {
+        "name": "O Campo de Batalha em Tempo Real",
+        "tagline": "App com WebSockets",
+        "summary": "Chat ou dashboard ao vivo com Socket.io. Arquitetura em tempo real que poucos têm no portfólio."
+      },
+      "automatedForge": {
+        "name": "A Forja Automatizada",
+        "tagline": "Plataforma de automação de relatórios",
+        "summary": "Ingere dados, gera e agenda relatórios automáticos. Com testes Cypress e pipeline de CI/CD."
+      },
+      "finalBoss": {
+        "name": "O Boss Final",
+        "tagline": "SaaS full-stack completo",
+        "summary": "Auth, banco, back Node robusto, front polido, testes E2E, CI/CD e deploy. O carro-chefe que prova o full-stack."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skill Tree",
+    "subtitle": "Os atributos do Hunter, traduzidos direto do CV.",
+    "spellsTitle": "Feitiços desbloqueados",
+    "educationTitle": "Formação (lore do Hunter)",
+    "education": {
+      "ucb": "Bacharelado em Engenharia de Software — Universidade Católica de Brasília (2025–2028)",
+      "cubos": "Formação Full Stack — Cubos Academy (2023)"
+    },
+    "attrs": {
+      "str": {
+        "name": "STR · Back-end",
+        "desc": "APIs, servidores e dados."
+      },
+      "agi": {
+        "name": "AGI · Front-end",
+        "desc": "Interfaces em React e TypeScript."
+      },
+      "int": {
+        "name": "INT · Integrações & Automação",
+        "desc": "O atributo mais alto — conectar e automatizar sistemas."
+      },
+      "vit": {
+        "name": "VIT · Qualidade & DevOps",
+        "desc": "Testes, CI/CD e versionamento."
+      },
+      "per": {
+        "name": "PER · Análise de dados",
+        "desc": "Relatórios automatizados e indicadores."
+      }
+    },
+    "spells": {
+      "reduction90": {
+        "name": "Redução de 90%",
+        "desc": "Automação de criação de contas (Skymail/AD)."
+      },
+      "branchGuardian": {
+        "name": "Guardião da Branch",
+        "desc": "Bloqueou 60% dos PRs fora de conformidade via testes de integração."
+      },
+      "artifactPurge": {
+        "name": "Purga de Artefatos",
+        "desc": "100% de redução de armazenamento no GitLab."
+      },
+      "monarchVision": {
+        "name": "Visão do Monarca",
+        "desc": "Relatórios de sprint com 100% de precisão de classificação."
+      }
+    }
+  },
+  "about": {
+    "title": "História do Hunter",
+    "subtitle": "A jornada de Willian Daniel.",
+    "p1": "Desenvolvedor full-stack focado em React e Node.js, com força real em integrações de sistemas e automação de processos.",
+    "p2": "Na RCS, conectou serviços como Microsoft Graph, TrueNAS, GLPI, TOTVS e Skymail, e automatizou rotinas que reduziram trabalho manual e elevaram a qualidade das entregas.",
+    "p3": "Guardião de qualidade: testes de integração, Cypress e CI/CD para manter as branches limpas e os relatórios precisos.",
+    "educationTitle": "Formação"
+  },
+  "contact": {
+    "title": "Convocar o Hunter",
+    "subtitle": "Vamos construir algo juntos?",
+    "emailLabel": "E-mail",
+    "githubLabel": "GitHub",
+    "cta": "Enviar e-mail",
+    "note": "O formulário de invocação chega numa próxima fase — por ora, o chamado vai direto ao e-mail."
   }
 }
