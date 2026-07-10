@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "ARISE — Willian Daniel · Portfólio Full-Stack",
+    "description": "Portfólio de Willian Daniel com tema Solo Leveling: suba de nível explorando os projetos (Gates) e desperte como Jogador."
+  },
+  "common": {
+    "language": "Idioma",
+    "languagePt": "Português",
+    "languageEn": "Inglês",
+    "close": "Fechar",
+    "skip": "Pular intro",
+    "yes": "Sim",
+    "no": "Não",
+    "loading": "Carregando o Sistema..."
+  },
+  "ranks": {
+    "e": "Rank E",
+    "d": "Rank D",
+    "c": "Rank C",
+    "b": "Rank B",
+    "a": "Rank A",
+    "s": "Rank S"
+  },
+  "home": {
+    "kicker": "O Sistema reconheceu você",
+    "title": "ARISE",
+    "subtitle": "Portfólio Full-Stack de Willian Daniel",
+    "intro": "Você adquiriu a qualificação para se tornar um Jogador. Explore os Gates, ganhe XP e suba de Rank E até S.",
+    "enter": "Despertar como Jogador",
+    "skipToContent": "Ir direto aos projetos"
+  },
+  "hud": {
+    "player": "Jogador",
+    "level": "Nível",
+    "levelShort": "Nv.",
+    "rank": "Rank",
+    "xp": "XP",
+    "xpToNext": "{current} / {needed} XP",
+    "questLog": "Quest Log",
+    "sound": "Som",
+    "soundOn": "Ativar som",
+    "soundOff": "Silenciar som",
+    "muted": "Mudo"
+  },
+  "system": {
+    "windowTitle": "SISTEMA",
+    "questComplete": "Missão concluída",
+    "levelUp": "SUBIU DE NÍVEL",
+    "rankUp": "PROMOÇÃO DE RANK",
+    "xpGained": "+{xp} XP",
+    "newLevel": "Nível {level}",
+    "newRank": "Rank {rank}",
+    "welcomeBack": "Bem-vindo de volta, Jogador de Rank {rank}."
+  },
+  "quests": {
+    "logTitle": "Registro de Missões",
+    "main": "Missões Principais",
+    "side": "Missões Secundárias",
+    "empty": "Nenhuma missão ativa.",
+    "completed": "Concluída",
+    "main.awaken.title": "Desperte como Jogador",
+    "main.awaken.desc": "Complete a tela de entrada.",
+    "main.firstGate.title": "Explore o primeiro Gate",
+    "main.firstGate.desc": "Abra um projeto.",
+    "main.analyzeDungeon.title": "Analise uma Dungeon",
+    "main.analyzeDungeon.desc": "Leia os detalhes técnicos de um projeto.",
+    "main.skills.title": "Domine suas habilidades",
+    "main.skills.desc": "Visite a Skill Tree.",
+    "main.boss.title": "Enfrente o Boss",
+    "main.boss.desc": "Desbloqueie e abra o projeto Rank S.",
+    "main.summon.title": "Convoque o Hunter",
+    "main.summon.desc": "Chegue na seção de contato.",
+    "side.polyglot.title": "Poliglota",
+    "side.polyglot.desc": "Troque o idioma do Sistema.",
+    "side.silentHunter.title": "Caçador silencioso",
+    "side.silentHunter.desc": "Mute e desmute o som.",
+    "side.explorer.title": "Explorador",
+    "side.explorer.desc": "Visite todas as seções.",
+    "side.monarchSecret.title": "Segredo do Monarca",
+    "side.monarchSecret.desc": "Encontre o easter egg escondido."
+  },
+  "boot": {
+    "detecting": "Detectando qualificação do visitante...",
+    "prompt": "Você adquiriu a qualificação para se tornar um Jogador. Aceita?",
+    "accept": "Sim",
+    "decline": "Não",
+    "skip": "Pular intro"
+  }
+}
