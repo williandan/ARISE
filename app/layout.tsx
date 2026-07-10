@@ -3,6 +3,7 @@ import { Rajdhani, Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { SystemProvider } from "@/components/providers/SystemProvider";
+import { NavBar } from "@/components/system/NavBar";
 import "./globals.css";
 
 // Display sci-fi (títulos / UI do Sistema)
@@ -40,6 +41,7 @@ export default async function RootLayout({
     <html lang={locale} className={`${rajdhani.variable} ${inter.variable} h-full antialiased`}>
       <body className="bg-bg-base text-ink flex min-h-full flex-col font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <NavBar />
           {children}
           <SystemProvider />
         </NextIntlClientProvider>
