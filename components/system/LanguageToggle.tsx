@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { setLocale } from "@/i18n/actions";
 import { locales, type Locale } from "@/i18n/config";
@@ -9,6 +9,7 @@ import { useGameStore } from "@/store/gameStore";
 /** Toggle PT ⇄ EN (Side Quest "Poliglota"). */
 export function LanguageToggle() {
   const locale = useLocale();
+  const tc = useTranslations("common");
   const [isPending, startTransition] = useTransition();
   const completeQuest = useGameStore((s) => s.completeQuest);
 
@@ -21,7 +22,7 @@ export function LanguageToggle() {
   }
 
   return (
-    <div className="flex items-center gap-1" role="group" aria-label="Idioma">
+    <div className="flex items-center gap-1" role="group" aria-label={tc("language")}>
       {locales.map((l) => {
         const active = l === locale;
         return (

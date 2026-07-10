@@ -1,10 +1,13 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { MAIN_QUESTS, SIDE_QUESTS, type QuestDef } from "@/lib/quests";
 import { useGameStore } from "@/store/gameStore";
 import { SystemWindow } from "./SystemWindow";
+
+const TITLE_ID = "quest-log-title";
 
 /** Registro de Missões (Quest Log) — abre a partir do HUD. */
 export function QuestLog({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -12,6 +15,26 @@ export function QuestLog({ open, onClose }: { open: boolean; onClose: () => void
   const tc = useTranslations("common");
   const reduceMotion = useReducedMotion();
   const completedQuests = useGameStore((s) => s.completedQuests);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  // Acessibilidade: fecha com Escape, move o foco pra dentro ao abrir e
+  // devolve o foco ao elemento anterior ao fechar.
+  useEffect(() => {
+    if (!open) return;
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    closeRef.current?.focus();
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      previouslyFocused?.focus?.();
+    };
+  }, [open, onClose]);
 
   const fade = reduceMotion
     ? { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 } }
@@ -32,13 +55,15 @@ export function QuestLog({ open, onClose }: { open: boolean; onClose: () => void
           onClick={onClose}
           role="dialog"
           aria-modal="true"
+          aria-labelledby={TITLE_ID}
         >
           <motion.div className="w-full max-w-md" {...fade} onClick={(e) => e.stopPropagation()}>
             <SystemWindow
               title={
                 <div className="flex items-center justify-between gap-4">
-                  <span>{t("logTitle")}</span>
+                  <span id={TITLE_ID}>{t("logTitle")}</span>
                   <button
+                    ref={closeRef}
                     type="button"
                     onClick={onClose}
                     aria-label={tc("close")}

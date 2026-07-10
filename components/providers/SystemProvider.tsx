@@ -43,6 +43,12 @@ export function SystemProvider() {
       const sfx = KIND_SFX[n.kind];
       if (sfx) sound.play(sfx);
     }
+    // Poda ids de notificações já dispensadas (ids são únicos e não reutilizados),
+    // mantendo o Set limitado ao que está na tela.
+    const alive = new Set(notifications.map((n) => n.id));
+    for (const id of seenIds.current) {
+      if (!alive.has(id)) seenIds.current.delete(id);
+    }
   }, [notifications]);
 
   // "Bem-vindo de volta, Jogador de Rank X." — só se já houver progresso salvo.

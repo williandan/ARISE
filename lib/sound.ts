@@ -141,13 +141,17 @@ export const sound = {
   init() {
     ensureInit();
   },
-  /** Sincroniza o mudo global do Howler com a preferência do visitante. */
+  /**
+   * Sincroniza o mudo global do Howler com a preferência do visitante.
+   * NÃO inicializa os SFX — `Howler.mute` é seguro sem Howls criados, então
+   * a síntese dos WAVs fica adiada até o primeiro `play()` (evita bloquear a
+   * main thread no mount de toda página, sobretudo com o som iniciando mudo).
+   */
   setMuted(muted: boolean) {
     if (typeof window === "undefined") return;
-    ensureInit();
     Howler.mute(muted);
   },
-  /** Toca um efeito (respeita o mudo global do Howler). */
+  /** Toca um efeito (respeita o mudo global do Howler). Inicializa sob demanda. */
   play(name: Sfx) {
     if (typeof window === "undefined") return;
     ensureInit();
