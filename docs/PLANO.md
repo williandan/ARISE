@@ -42,6 +42,12 @@ O visitante começa no **Nível 1 · Rank E** e evolui:
 
 > Os números são um ponto de partida — a gente calibra pra que um visitante que "explora tudo" chegue perto de S sem grinding chato. A ideia é que **explorar o portfólio inteiro ≈ virar S-rank**.
 
+> **Dois papéis (decisão firmada).** Não confundir as duas identidades do site:
+> - **Willian (dono) = o Monarca, S-rank fixo / MAX.** O card central da Home é o perfil dele (badge S, "MONARCH · SOVEREIGN · MAX", roxo, stats reais). Status estático, sem barra de XP preenchível.
+> - **Visitante = o Jogador que sobe de nível.** Começa em E-rank / nível 1, cor azul (ciano), e vive no **HUD persistente** (canto) — é onde ele se vê "upando". O HUD enche e migra de azul → roxo conforme sobe.
+> - O **Rank Path** mostra a escalada do visitante (E embaixo = atual/"YOU"; ranks acima trancados).
+> - O gradiente **azul → roxo** representa a jornada do visitante (nasce azul em E) até o Willian (roxo em S). A **tela de boot** é onde o visitante "desperta como Jogador" antes da Home.
+
 ### 2.3 Fontes de XP (ações que dão pontos)
 
 - **Primeira visita a uma seção** (Home, Projetos, Skills, Sobre, Contato) → XP médio
@@ -136,7 +142,7 @@ portfolio/
 
 ### 3.4 HUD persistente
 
-Um **HUD fixo** (canto da tela) mostra sempre: nível atual, barra de XP, rank e um ícone de "Quest Log". É a âncora que faz o visitante sentir que está progredindo o tempo todo.
+Um **HUD fixo** (canto da tela) mostra sempre o status do **visitante**: nível atual, barra de XP, rank e um ícone de "Quest Log". Começa em E-rank / nível 1 (azul) e migra pra roxo conforme sobe. É a âncora que faz o visitante sentir que está progredindo o tempo todo — e é distinto do perfil do Willian (Monarca S-rank fixo), que ocupa o card central da Home.
 
 ---
 
@@ -144,8 +150,9 @@ Um **HUD fixo** (canto da tela) mostra sempre: nível atual, barra de XP, rank e
 
 | Elemento do portfólio | Vira, no Sistema... |
 |-----------------------|---------------------|
-| Visitante | **O Jogador** (que sobe de nível) |
-| Home | **Tela de Status / Hunter Profile** do Willian |
+| Visitante | **O Jogador** que sobe de nível (vive no HUD, começa E-rank azul) |
+| Willian (dono) | **O Monarca**, S-rank fixo / MAX (card central da Home) |
+| Home | **Tela de Status / Hunter Profile** do Willian + HUD do visitante |
 | Cada projeto | **Um Gate / Dungeon** com rank E–S |
 | Seção de habilidades | **Skill Tree** (atributos e "feitiços") |
 | Sobre | **História do Hunter** (sua jornada / experiência) |

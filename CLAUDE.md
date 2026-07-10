@@ -8,6 +8,12 @@ Portfólio de desenvolvedor full-stack do **Willian Daniel**, com tema visual e 
 
 Regra de ouro: a gamificação nunca pode atrapalhar um recrutador com pressa. Todo conteúdo essencial (projetos, contato, currículo) deve ser acessível mesmo sem "jogar". A camada de jogo é um bônus, não um muro.
 
+## Estado atual (jul/2026)
+
+- **Concepção e plano:** concluídos (`docs/PLANO.md`).
+- **Design visual:** 4 telas-núcleo prototipadas no Claude Design e aprovadas — Home (Hunter Profile), tela de Boot, grade de Gates e Skill Tree. Referência visual e prompts em `docs/BRIEF_CLAUDE_DESIGN.md`.
+- **Código:** ainda não iniciado. Próxima etapa é a **Fase 0/1** (ver `docs/CLAUDE_CODE_KICKOFF.md` para a primeira tarefa e o passo a passo).
+
 ## Stack
 
 - **Framework:** Next.js (App Router) + React + TypeScript
@@ -28,12 +34,23 @@ Regra de ouro: a gamificação nunca pode atrapalhar um recrutador com pressa. T
 - Missões principais guiam o percurso; missões secundárias (trocar idioma, mutar som, etc.) engajam.
 - Progresso salvo em `localStorage` (volta de onde parou).
 
+### Dois papéis (decisão firmada)
+
+O site tem DUAS identidades distintas — nunca confundir:
+
+- **Willian (dono do site) = o Monarca, sempre S-rank / MAX.** Status fixo, não muda. É o "boss" no topo. O card central da Home é o perfil dele (badge S, "MONARCH · SOVEREIGN · MAX", roxo, stats reais: Gates limpos, Skills). Sem barra de XP preenchível — o dele é estático.
+- **Visitante = o Jogador que sobe de nível.** Começa em **E-rank / nível 1**, XP quase zerado, cor **azul (ciano)**. Vive no **HUD persistente** (canto), presente em toda página — é onde o visitante se vê "upando". Conforme ganha XP navegando, o HUD enche e a cor migra de azul → roxo (aproximando-se do Monarca).
+- **Rank Path** mostra a escalada do VISITANTE (E embaixo = "YOU/atual", ranks acima trancados), não a do dono.
+- O gradiente **azul → roxo** = a jornada do visitante (nasce azul em E) até o Willian (roxo em S).
+- A **tela de boot** é a "abertura sobre o visitante": é onde ele desperta como Jogador (E-rank) antes de entrar na Home.
+
 ## Mapeamento Solo Leveling → portfólio
 
 | Portfólio | Sistema |
 |-----------|---------|
-| Visitante | O Jogador (sobe de nível) |
-| Home | Tela de Status / Hunter Profile |
+| Visitante | O Jogador que sobe de nível (vive no HUD, começa E-rank azul) |
+| Willian (dono) | O Monarca, S-rank fixo / MAX (card central da Home) |
+| Home | Tela de Status / Hunter Profile (perfil do Willian + HUD do visitante) |
 | Cada projeto | Um Gate / Dungeon (rank E–S) |
 | Seção de skills | Skill Tree (atributos STR/AGI/INT/VIT/PER) |
 | Sobre | História do Hunter |
