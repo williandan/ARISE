@@ -272,5 +272,36 @@
     "seed1": "Beber água",
     "seed2": "Ler 20 minutos",
     "seed3": "Exercitar-se"
+  },
+  "portal": {
+    "liveDemo": "Demo ao vivo",
+    "intro": "API REST completa com autenticação JWT e CRUD, servida por Route Handlers do Next e consumida por este front. Crie uma conta e gerencie seus registros.",
+    "demoNote": "Demo efêmera — use um e-mail e senha fictícios. Os dados ficam em memória e somem quando o servidor reinicia.",
+    "email": "E-mail",
+    "password": "Senha",
+    "login": "Entrar",
+    "register": "Criar conta",
+    "toRegister": "Não tem conta? Criar uma",
+    "toLogin": "Já tem conta? Entrar",
+    "logout": "Sair",
+    "loggedInAs": "Conectado como {email}",
+    "recordTitlePlaceholder": "Título do registro",
+    "recordNotePlaceholder": "Nota (opcional)",
+    "add": "Adicionar",
+    "edit": "Editar",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "empty": "Nenhum registro ainda. Crie o primeiro!",
+    "records": "Registros",
+    "loading": "Carregando...",
+    "errors": {
+      "invalid_email": "E-mail inválido.",
+      "weak_password": "A senha precisa de ao menos 4 caracteres.",
+      "email_taken": "E-mail já cadastrado.",
+      "invalid_credentials": "E-mail ou senha incorretos.",
+      "title_required": "O título é obrigatório.",
+      "generic": "Algo deu errado. Tente novamente."
+    }
   }
 }

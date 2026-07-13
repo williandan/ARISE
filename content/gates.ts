@@ -23,7 +23,7 @@ export interface Gate {
   /** Gate final (marca "BOSS"). */
   boss?: boolean;
   /** Demo interativa embutida na página do Gate. */
-  demo?: "dailyQuestTracker";
+  demo?: "dailyQuestTracker" | "portalMenor";
   repoUrl?: string;
   demoUrl?: string;
 }
@@ -42,9 +42,10 @@ export const GATES: readonly Gate[] = [
     id: "lesserPortal",
     slug: "api-rest-crud-jwt",
     rank: "D",
-    tech: ["Node", "JWT", "SQL"],
+    tech: ["Next API", "JWT", "REST"],
     difficulty: 2,
-    status: "planned",
+    status: "live",
+    demo: "portalMenor",
   },
   {
     id: "integrationDungeon",
