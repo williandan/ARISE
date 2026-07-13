@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:#06050a}
+  .lang-pt{display:none}
+  [data-lang="pt"] .lang-pt{display:inline}
+  [data-lang="pt"] .lang-en{display:none}
+  [data-lang="en"] .seg-en,[data-lang="pt"] .seg-pt{background:var(--a);color:#06050a;box-shadow:0 0 12px var(--glow2)}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+  @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+  @keyframes scanmove{0%{transform:translateY(-160px)}100%{transform:translateY(110vh)}}
+  @keyframes floatp{0%{transform:translateY(0);opacity:0}20%{opacity:.9}100%{transform:translateY(-140px);opacity:0}}
+  @keyframes shine{0%{transform:translateX(-140%)}100%{transform:translateX(340%)}}
+  a{color:var(--a2);text-decoration:none}a:hover{color:#fff}
+  @media (max-width:980px){.hp-main{grid-template-columns:1fr !important}}
+</style>
+</helmet>
+
+<div data-lang="{{ lang }}" style="--a:#a855f7;--a2:#c99bff;--a-deep:#7c3aed;--glow:rgba(168,85,247,.6);--glow2:rgba(139,92,246,.3);--glow-soft:rgba(139,92,246,.13);--gold:#d9b64f;position:relative;min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(130% 90% at 50% -10%,#160f28 0%,#0b0916 46%,#06050a 100%);font-family:'Inter',sans-serif;color:#d0c6e4;overflow:hidden;">
+
+  <!-- ambient layers -->
+  <div style="position:absolute;left:-15%;right:-15%;bottom:0;height:42vh;background-image:linear-gradient(var(--glow-soft) 1px,transparent 1px),linear-gradient(90deg,var(--glow-soft) 1px,transparent 1px);background-size:74px 74px;transform:perspective(680px) rotateX(75deg);transform-origin:bottom center;opacity:.6;-webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent);pointer-events:none;"></div>
+  <div style="position:absolute;top:-320px;left:50%;transform:translateX(-50%);width:1100px;height:640px;background:radial-gradient(circle,var(--glow2),transparent 65%);filter:blur(24px);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0 1px,transparent 1px 3px);opacity:.6;pointer-events:none;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;height:150px;background:linear-gradient(180deg,transparent,var(--glow-soft),transparent);animation:scanmove 8s linear infinite;pointer-events:none;"></div>
+  <div style="position:absolute;left:14%;top:78%;width:3px;height:3px;border-radius:50%;background:var(--a);box-shadow:0 0 8px var(--a);animation:floatp 6.5s ease-in infinite;pointer-events:none;"></div>
+  <div style="position:absolute;left:82%;top:82%;width:2px;height:2px;border-radius:50%;background:var(--a2);box-shadow:0 0 8px var(--a);animation:floatp 7.6s ease-in infinite 1.4s;pointer-events:none;"></div>
+  <div style="position:absolute;left:46%;top:88%;width:3px;height:3px;border-radius:50%;background:var(--a);box-shadow:0 0 8px var(--a);animation:floatp 8s ease-in infinite 2.6s;pointer-events:none;"></div>
+  <div style="position:absolute;left:66%;top:76%;width:2px;height:2px;border-radius:50%;background:var(--a2);box-shadow:0 0 8px var(--a);animation:floatp 6.8s ease-in infinite .8s;pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;box-shadow:inset 0 0 240px 60px rgba(0,0,0,.7);pointer-events:none;"></div>
+
+  <!-- CONTENT CONTAINER -->
+  <div style="position:relative;z-index:1;width:100%;max-width:1600px;margin:0 auto;flex:1;display:flex;flex-direction:column;padding:30px 48px 42px;">
+
+    <!-- HEADER -->
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:36px;height:36px;position:relative;display:grid;place-items:center;background:linear-gradient(160deg,var(--a2),var(--a-deep));clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);box-shadow:0 0 18px var(--glow2);"><div style="width:27px;height:27px;background:#0b0916;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);display:grid;place-items:center;"><div style="width:8px;height:8px;background:var(--a);border-radius:50%;box-shadow:0 0 8px var(--a);"></div></div></div>
+        <div style="display:flex;flex-direction:column;line-height:1;">
+          <div style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:23px;letter-spacing:7px;color:#f4eeff;">ARISE</div>
+          <div style="font-family:'Chakra Petch',sans-serif;font-size:10px;letter-spacing:5px;color:var(--a);margin-top:4px;">THE MONARCH</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div style="display:flex;font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:13px;letter-spacing:2px;border:1px solid rgba(160,120,220,.28);border-radius:2px;overflow:hidden;">
+          <div class="seg-en" onClick="{{ setEn }}" style="padding:7px 15px;color:#a08ebf;cursor:pointer;">EN</div>
+          <div class="seg-pt" onClick="{{ setPt }}" style="padding:7px 15px;color:#a08ebf;cursor:pointer;border-left:1px solid rgba(160,120,220,.28);">PT</div>
+        </div>
+        <button onClick="{{ toggleMute }}" style="width:40px;height:40px;display:grid;place-items:center;background:rgba(20,13,34,.6);border:1px solid rgba(160,120,220,.28);border-radius:2px;cursor:pointer;position:relative;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#bfa9d3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9v6h4l5 4V5L7 9H3z"/><path d="M16 8a5 5 0 0 1 0 8"/></svg>
+          <span style="position:absolute;left:9px;top:19px;width:24px;height:2px;background:#ff6b6b;transform:rotate(-45deg);transform-origin:left;opacity:{{ slashOpacity }};box-shadow:0 0 6px #ff6b6b;"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MAIN 60/40 -->
+    <div class="hp-main" style="flex:1;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:stretch;">
+
+      <!-- LEFT: Hunter Profile card -->
+      <div style="padding:1.5px;clip-path:polygon(28px 0,100% 0,100% calc(100% - 28px),calc(100% - 28px) 100%,0 100%,0 28px);background:linear-gradient(160deg,var(--a2),var(--a-deep));box-shadow:0 0 46px var(--glow2),0 0 130px var(--glow-soft);">
+        <div style="height:100%;clip-path:polygon(27px 0,100% 0,100% calc(100% - 27px),calc(100% - 27px) 100%,0 100%,0 27px);background:linear-gradient(155deg,rgba(20,14,34,.94),rgba(9,7,16,.97));backdrop-filter:blur(6px);padding:44px 50px;display:flex;flex-direction:column;">
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:auto;">
+            <span style="font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:5px;color:var(--a);display:flex;align-items:center;gap:10px;"><span style="width:8px;height:8px;background:var(--a);transform:rotate(45deg);box-shadow:0 0 12px var(--a);animation:pulse 2s infinite;"></span><span class="lang-en">MONARCH PROFILE</span><span class="lang-pt">PERFIL DO MONARCA</span></span>
+            <span style="font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:3px;color:#8a6ea8;">ID · WD-0001</span>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:32px;margin:38px 0;">
+            <div style="width:120px;height:134px;position:relative;display:grid;place-items:center;background:linear-gradient(160deg,var(--a2),var(--a-deep));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);box-shadow:0 0 40px var(--glow2);flex-shrink:0;"><div style="width:107px;height:122px;background:radial-gradient(circle at 50% 35%,#1a1030,#0b0916);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:62px;color:var(--a);text-shadow:0 0 26px var(--glow);line-height:1;">S</span><span style="font-family:'Chakra Petch',sans-serif;font-size:10px;letter-spacing:4px;color:var(--gold);margin-top:4px;">RANK</span></div></div>
+            <div style="flex:1;min-width:0;">
+              <div style="display:inline-flex;align-items:center;font-family:'Chakra Petch',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;color:var(--gold);border:1px solid var(--gold);padding:4px 12px;margin-bottom:16px;clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px);box-shadow:0 0 16px rgba(217,182,79,.25);"><span class="lang-en">S-RANK MONARCH</span><span class="lang-pt">MONARCA RANK S</span></div>
+              <h1 style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(48px,5.2vw,72px);letter-spacing:3px;color:#f7f2ff;margin:0;line-height:.98;text-shadow:0 0 36px var(--glow-soft);">WILLIAN<br>DANIEL</h1>
+              <div style="font-family:'Chakra Petch',sans-serif;font-size:19px;letter-spacing:6px;color:var(--a2);text-transform:uppercase;margin-top:14px;"><span class="lang-en">Full Stack Developer</span><span class="lang-pt">Desenvolvedor Full Stack</span></div>
+            </div>
+          </div>
+
+          <div style="border-left:2px solid var(--a);background:linear-gradient(90deg,var(--glow-soft),transparent);padding:13px 16px;margin-bottom:auto;">
+            <span style="font-family:'Chakra Petch',sans-serif;font-size:15px;letter-spacing:1px;color:#cabbe0;"><span class="lang-en">The System bends to your will. Every gate has fallen.</span><span class="lang-pt">O Sistema se curva à sua vontade. Todos os gates caíram.</span></span><span style="color:var(--a);animation:blink 1s steps(1) infinite;margin-left:2px;">▮</span>
+          </div>
+
+          <!-- STATIC MONARCH STATUS -->
+          <div style="margin:38px 0 22px;">
+            <div style="display:flex;align-items:center;gap:16px;padding:15px 22px;border:1px solid var(--gold);background:linear-gradient(90deg,rgba(217,182,79,.16),rgba(168,85,247,.10) 55%,transparent);clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);box-shadow:0 0 28px rgba(217,182,79,.22),inset 0 0 40px rgba(168,85,247,.08);">
+              <span style="width:10px;height:10px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 12px var(--gold);animation:pulse 2.2s infinite;flex-shrink:0;"></span>
+              <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:17px;letter-spacing:5px;color:#f7f2ff;">MONARCH · SOVEREIGN</span>
+              <span style="margin-left:auto;font-family:'Orbitron',sans-serif;font-weight:900;font-size:22px;letter-spacing:3px;color:var(--gold);text-shadow:0 0 16px rgba(217,182,79,.55);">MAX</span>
+            </div>
+            <div style="font-family:'Inter',sans-serif;font-size:12px;color:#8a6ea8;margin-top:9px;letter-spacing:1px;"><span class="lang-en">All gates conquered · status locked at the summit</span><span class="lang-pt">Todos os gates conquistados · status fixo no topo</span></div>
+          </div>
+
+          <!-- OWNER STATS -->
+          <div style="display:flex;gap:16px;margin-bottom:26px;">
+            <div style="flex:1;padding:15px 18px;background:rgba(20,14,34,.55);border:1px solid rgba(160,120,220,.22);clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);"><div style="font-family:'Chakra Petch',sans-serif;font-size:10px;letter-spacing:2px;color:#8878a0;margin-bottom:8px;"><span class="lang-en">GATES CLEARED</span><span class="lang-pt">GATES LIMPOS</span></div><div style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:26px;color:#f4eeff;">24<span style="font-size:14px;color:#8a6ea8;"> / 24</span></div></div>
+            <div style="flex:1;padding:15px 18px;background:rgba(20,14,34,.55);border:1px solid rgba(160,120,220,.22);clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);"><div style="font-family:'Chakra Petch',sans-serif;font-size:10px;letter-spacing:2px;color:#8878a0;margin-bottom:8px;"><span class="lang-en">SKILLS</span><span class="lang-pt">SKILLS</span></div><div style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:26px;color:#f4eeff;">28<span style="font-size:14px;color:#8a6ea8;"> / 28</span></div></div>
+          </div>
+
+          <!-- CTAs -->
+          <div style="display:flex;gap:16px;align-items:center;">
+            <button style="padding:16px 36px;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:15px;letter-spacing:3px;color:#06050a;background:linear-gradient(120deg,var(--a2),var(--a-deep));border:none;cursor:pointer;clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px);box-shadow:0 0 30px var(--glow2);" style-hover="box-shadow:0 0 48px var(--glow)"><span class="lang-en">EXPLORE THE GATES ▸</span><span class="lang-pt">EXPLORAR OS GATES ▸</span></button>
+            <button style="padding:16px 30px;font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:14px;letter-spacing:3px;color:var(--a2);background:transparent;border:1px solid rgba(160,120,220,.4);cursor:pointer;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);" style-hover="border-color:var(--a);color:#fff"><span class="lang-en">VIEW RÉSUMÉ</span><span class="lang-pt">VER CURRÍCULO</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div style="display:flex;flex-direction:column;gap:22px;min-width:0;">
+
+        <!-- HUD (VISITOR — starts at E, cyan) -->
+        <div style="padding:1.5px;clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px);background:linear-gradient(160deg,#7cc4ff,#2f7fd6);box-shadow:0 0 30px rgba(56,168,255,.32);">
+          <div style="clip-path:polygon(17px 0,100% 0,100% calc(100% - 17px),calc(100% - 17px) 100%,0 100%,0 17px);background:linear-gradient(155deg,rgba(12,20,34,.95),rgba(6,10,18,.97));padding:18px 20px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+              <span style="display:flex;align-items:center;gap:7px;font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:3px;color:#7cc4ff;"><span style="width:6px;height:6px;border-radius:50%;background:#38bdf8;box-shadow:0 0 8px #38bdf8;animation:pulse 1.8s infinite;"></span><span class="lang-en">PLAYER · VISITOR</span><span class="lang-pt">JOGADOR · VISITANTE</span></span>
+              <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:10px;letter-spacing:2px;color:#38bdf8;border:1px solid rgba(56,168,255,.45);padding:2px 8px;clip-path:polygon(4px 0,100% 0,100% calc(100% - 4px),calc(100% - 4px) 100%,0 100%,0 4px);">RANK E</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;">
+              <div style="width:54px;height:60px;position:relative;display:grid;place-items:center;background:linear-gradient(160deg,#7cc4ff,#2f7fd6);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);box-shadow:0 0 20px rgba(56,168,255,.35);flex-shrink:0;"><div style="width:46px;height:52px;background:#070c16;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;font-family:'Orbitron',sans-serif;font-weight:900;font-size:27px;color:#38bdf8;text-shadow:0 0 12px rgba(56,168,255,.6);">E</div></div>
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                  <span style="font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:2px;color:#8ea3bf;"><span class="lang-en">LEVEL</span><span class="lang-pt">NÍVEL</span></span>
+                  <span style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:22px;color:#eef4ff;">01</span>
+                </div>
+                <div style="height:9px;margin-top:7px;background:rgba(255,255,255,.06);border:1px solid rgba(96,150,220,.3);position:relative;overflow:hidden;"><div style="position:absolute;inset:0;width:8%;background:linear-gradient(90deg,#2f7fd6,#7cc4ff);box-shadow:0 0 12px rgba(56,168,255,.6);"></div></div>
+                <div style="font-family:'Inter',sans-serif;font-size:10px;color:#5f7897;margin-top:6px;letter-spacing:.5px;">40 / 500 XP</div>
+              </div>
+            </div>
+            <button style="margin-top:12px;width:100%;padding:10px;font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:3px;color:#38bdf8;background:rgba(56,168,255,.1);border:1px solid #38bdf8;cursor:pointer;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);" style-hover="background:rgba(56,168,255,.22)"><span class="lang-en">▸ QUEST LOG</span><span class="lang-pt">▸ MISSÕES</span></button>
+          </div>
+        </div>
+
+        <!-- RANK PATH (visitor's climb — stretches) -->
+        <div style="flex:1;padding:1.5px;clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px);background:linear-gradient(160deg,#7cc4ff,#2f7fd6 45%,var(--a-deep));box-shadow:0 0 30px rgba(56,168,255,.24);">
+          <div style="height:100%;clip-path:polygon(17px 0,100% 0,100% calc(100% - 17px),calc(100% - 17px) 100%,0 100%,0 17px);background:linear-gradient(155deg,rgba(14,18,32,.93),rgba(9,7,16,.97));padding:22px 22px;display:flex;flex-direction:column;">
+            <div style="font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:4px;color:#8798b0;margin-bottom:4px;"><span class="lang-en">RANK PATH</span><span class="lang-pt">CAMINHO DE RANK</span></div>
+            <div style="font-family:'Inter',sans-serif;font-size:11px;color:#5f7897;letter-spacing:.5px;margin-bottom:16px;"><span class="lang-en">Climb from E to the Monarch</span><span class="lang-pt">Suba de E até o Monarca</span></div>
+            <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:8px;">
+              <div style="display:flex;align-items:center;gap:12px;padding:0 4px;opacity:.5;"><span style="width:38px;height:38px;display:grid;place-items:center;font-family:'Orbitron',sans-serif;font-weight:900;font-size:16px;color:#a855f7;background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.55);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);flex-shrink:0;">S</span><span style="flex:1;font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:2px;color:#b9aecf;">MONARCH</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b7c94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:0 4px;opacity:.5;"><span style="width:38px;height:38px;display:grid;place-items:center;font-family:'Orbitron',sans-serif;font-weight:900;font-size:16px;color:#9a4df0;background:rgba(154,77,240,.1);border:1px solid rgba(154,77,240,.45);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);flex-shrink:0;">A</span><span style="flex:1;font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:2px;color:#b9aecf;">NATIONAL</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b7c94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:0 4px;opacity:.52;"><span style="width:38px;height:38px;display:grid;place-items:center;font-family:'Orbitron',sans-serif;font-weight:900;font-size:16px;color:#8e5cf6;background:rgba(142,92,246,.1);border:1px solid rgba(142,92,246,.45);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);flex-shrink:0;">B</span><span style="flex:1;font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:2px;color:#b9aecf;">ELITE</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b7c94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:0 4px;opacity:.56;"><span style="width:38px;height:38px;display:grid;place-items:center;font-family:'Orbitron',sans-serif;font-weight:900;font-size:16px;color:#7472ff;background:rgba(116,114,255,.1);border:1px solid rgba(116,114,255,.45);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);flex-shrink:0;">C</span><span style="flex:1;font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:2px;color:#c1c6da;">VANGUARD</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b7c94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:0 4px;opacity:.62;"><span style="width:38px;height:38px;display:grid;place-items:center;font-family:'Orbitron',sans-serif;font-weight:900;font-size:16px;color:#5691ff;background:rgba(86,145,255,.12);border:1px solid rgba(86,145,255,.5);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);flex-shrink:0;">D</span><span style="flex:1;font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:2px;color:#c8d1e2;">SCOUT</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b7c94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:8px;background:linear-gradient(90deg,rgba(56,168,255,.16),transparent);border:1px solid #38bdf8;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);box-shadow:0 0 18px rgba(56,168,255,.2);"><span style="width:38px;height:38px;display:grid;place-items:center;font-family:'Orbitron',sans-serif;font-weight:900;font-size:16px;color:#06050a;background:#38bdf8;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);box-shadow:0 0 18px rgba(56,168,255,.6);flex-shrink:0;">E</span><span style="flex:1;font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:2px;color:#fff;">AWAKENED</span><span style="font-family:'Chakra Petch',sans-serif;font-size:10px;letter-spacing:2px;color:#7cc4ff;"><span class="lang-en">YOU</span><span class="lang-pt">VOCÊ</span></span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIVE QUEST -->
+        <div style="padding:1.5px;clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px);background:linear-gradient(160deg,var(--gold),var(--a-deep));box-shadow:0 0 26px rgba(217,182,79,.18);">
+          <div style="clip-path:polygon(17px 0,100% 0,100% calc(100% - 17px),calc(100% - 17px) 100%,0 100%,0 17px);background:linear-gradient(155deg,rgba(24,17,34,.95),rgba(11,8,16,.97));padding:18px 20px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+              <span style="display:flex;align-items:center;gap:9px;font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:3px;color:var(--gold);"><span style="width:7px;height:7px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 8px var(--gold);animation:pulse 1.8s infinite;"></span><span class="lang-en">ACTIVE QUEST</span><span class="lang-pt">MISSÃO ATIVA</span></span>
+              <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;color:var(--gold);border:1px solid rgba(217,182,79,.4);padding:2px 9px;clip-path:polygon(5px 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) 100%,0 100%,0 5px);">+50 XP</span>
+            </div>
+            <div style="font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:16px;letter-spacing:.5px;color:#f2ecff;margin-bottom:12px;"><span class="lang-en">Explore the first Gate</span><span class="lang-pt">Explore o primeiro Gate</span></div>
+            <div style="height:7px;background:rgba(255,255,255,.06);border:1px solid rgba(160,120,220,.22);position:relative;overflow:hidden;"><div style="position:absolute;inset:0;width:40%;background:linear-gradient(90deg,var(--a2),var(--gold));box-shadow:0 0 10px var(--glow);"></div></div>
+            <div style="font-family:'Inter',sans-serif;font-size:11px;color:#8a6ea8;margin-top:8px;letter-spacing:.5px;"><span class="lang-en">2 of 5 objectives complete</span><span class="lang-pt">2 de 5 objetivos concluídos</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: 'en', muted: false };
+  renderVals() {
+    return {
+      lang: this.state.lang,
+      setEn: () => this.setState({ lang: 'en' }),
+      setPt: () => this.setState({ lang: 'pt' }),
+      toggleMute: () => this.setState(s => ({ muted: !s.muted })),
+      slashOpacity: this.state.muted ? 1 : 0,
+    };
+  }
+}
+</script>
+</body>
+</html>
