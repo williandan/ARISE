@@ -52,6 +52,7 @@
   },
   "system": {
     "windowTitle": "SISTEMA",
+    "notification": "Notificação",
     "questComplete": "Missão concluída",
     "levelUp": "SUBIU DE NÍVEL",
     "rankUp": "PROMOÇÃO DE RANK",
