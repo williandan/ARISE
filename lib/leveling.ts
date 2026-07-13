@@ -58,3 +58,18 @@ export function progressionColor(level: number): string {
 export function rankIndex(rank: Rank): number {
   return RANKS.indexOf(rank);
 }
+
+/** Nível mínimo do visitante para cada rank (PLANO 2.2). */
+export const RANK_MIN_LEVEL: Record<Rank, number> = {
+  E: 1,
+  D: 5,
+  C: 10,
+  B: 15,
+  A: 20,
+  S: 25,
+};
+
+/** Um Gate de rank `gateRank` está desbloqueado para um visitante neste nível? */
+export function isGateUnlocked(visitorLevel: number, gateRank: Rank): boolean {
+  return visitorLevel >= RANK_MIN_LEVEL[gateRank];
+}

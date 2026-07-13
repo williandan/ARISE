@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:#05060a}
+  .lang-pt{display:none}
+  [data-lang="pt"] .lang-pt{display:inline}
+  [data-lang="pt"] .lang-en{display:none}
+  [data-lang="en"] .seg-en,[data-lang="pt"] .seg-pt{background:#38bdf8;color:#05060a;box-shadow:0 0 12px rgba(56,168,255,.5)}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.1}}
+  @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+  @keyframes floatp{0%{transform:translateY(0);opacity:0}20%{opacity:.9}100%{transform:translateY(-160px);opacity:0}}
+  @keyframes scanmove{0%{transform:translateY(-160px)}100%{transform:translateY(110vh)}}
+  @keyframes sweep{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+  @keyframes appear{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes winglow{0%,100%{box-shadow:0 0 44px rgba(56,168,255,.28),0 0 130px rgba(56,168,255,.1),inset 0 0 60px rgba(56,168,255,.05)}50%{box-shadow:0 0 68px rgba(56,168,255,.5),0 0 180px rgba(56,168,255,.14),inset 0 0 80px rgba(56,168,255,.08)}}
+  a{text-decoration:none}
+</style>
+</helmet>
+
+<div data-lang="{{ lang }}" style="position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;background:radial-gradient(120% 90% at 50% 42%,#0a1120 0%,#070b14 45%,#04050a 100%);font-family:'Inter',sans-serif;color:#c6d2e4;overflow:hidden;">
+
+  <!-- ambient layers -->
+  <div style="position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:700px;background:radial-gradient(circle,rgba(56,168,255,.16),transparent 62%);filter:blur(24px);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0 1px,transparent 1px 3px);opacity:.55;pointer-events:none;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;height:150px;background:linear-gradient(180deg,transparent,rgba(56,168,255,.08),transparent);animation:scanmove 8s linear infinite;pointer-events:none;"></div>
+  <div style="position:absolute;left:18%;top:82%;width:3px;height:3px;border-radius:50%;background:#38bdf8;box-shadow:0 0 8px #38bdf8;animation:floatp 7s ease-in infinite;pointer-events:none;"></div>
+  <div style="position:absolute;left:80%;top:86%;width:2px;height:2px;border-radius:50%;background:#7cc4ff;box-shadow:0 0 8px #38bdf8;animation:floatp 8s ease-in infinite 1.6s;pointer-events:none;"></div>
+  <div style="position:absolute;left:42%;top:90%;width:3px;height:3px;border-radius:50%;background:#38bdf8;box-shadow:0 0 8px #38bdf8;animation:floatp 9s ease-in infinite 3s;pointer-events:none;"></div>
+  <div style="position:absolute;left:62%;top:80%;width:2px;height:2px;border-radius:50%;background:#7cc4ff;box-shadow:0 0 8px #38bdf8;animation:floatp 7.5s ease-in infinite .9s;pointer-events:none;"></div>
+  <div style="position:absolute;left:30%;top:78%;width:2px;height:2px;border-radius:50%;background:#7cc4ff;box-shadow:0 0 8px #38bdf8;animation:floatp 8.6s ease-in infinite 4s;pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;box-shadow:inset 0 0 260px 70px rgba(0,0,0,.78);pointer-events:none;"></div>
+
+  <!-- language toggle -->
+  <div style="position:absolute;top:30px;right:36px;z-index:3;display:flex;font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:2px;border:1px solid rgba(96,150,220,.28);border-radius:2px;overflow:hidden;">
+    <div class="seg-en" onClick="{{ setEn }}" style="padding:6px 13px;color:#8ea3bf;cursor:pointer;">EN</div>
+    <div class="seg-pt" onClick="{{ setPt }}" style="padding:6px 13px;color:#8ea3bf;cursor:pointer;border-left:1px solid rgba(96,150,220,.28);">PT</div>
+  </div>
+
+  <!-- typed line -->
+  <div style="position:relative;z-index:2;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:1.5px;color:#5f7d9e;animation:appear .6s ease .15s both;">
+    <span style="color:#38bdf8;">&gt;</span> <span class="lang-en">Detecting visitor qualification...</span><span class="lang-pt">Detectando qualificação do visitante...</span><span style="color:#38bdf8;animation:blink 1s steps(1) infinite;">_</span>
+  </div>
+
+  <!-- rank E badge -->
+  <div style="position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:5px;color:#5f8bb5;border:1px solid rgba(56,168,255,.28);padding:6px 16px;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);background:rgba(56,168,255,.04);animation:appear .6s ease .9s both;">
+    <span style="width:6px;height:6px;background:#38bdf8;transform:rotate(45deg);box-shadow:0 0 8px #38bdf8;animation:pulse 2s infinite;"></span>[ RANK&nbsp;E ]
+  </div>
+
+  <!-- SYSTEM WINDOW -->
+  <div style="position:relative;z-index:2;width:660px;max-width:90vw;padding:1.5px;clip-path:polygon(30px 0,100% 0,100% calc(100% - 30px),calc(100% - 30px) 100%,0 100%,0 30px);background:linear-gradient(160deg,#9dd3ff,#2f7fd6);animation:appear .75s cubic-bezier(.2,.8,.25,1) .45s both,winglow 4.2s ease-in-out 1.3s infinite;">
+    <div style="position:relative;clip-path:polygon(29px 0,100% 0,100% calc(100% - 29px),calc(100% - 29px) 100%,0 100%,0 29px);background:linear-gradient(155deg,rgba(11,19,33,.95),rgba(6,10,18,.98));backdrop-filter:blur(8px);padding:38px 46px 42px;overflow:hidden;">
+
+      <!-- inner light sweep -->
+      <div style="position:absolute;top:0;bottom:0;width:120px;background:linear-gradient(90deg,transparent,rgba(56,168,255,.1),transparent);animation:sweep 5s ease-in-out 1.6s infinite;pointer-events:none;"></div>
+
+      <!-- window header -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;">
+        <span style="display:flex;align-items:center;gap:10px;font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:5px;color:#38bdf8;"><span style="width:9px;height:9px;background:#38bdf8;transform:rotate(45deg);box-shadow:0 0 12px #38bdf8;animation:pulse 1.8s infinite;"></span>SYSTEM</span>
+        <span style="font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:3px;color:#5f7d9e;"><span class="lang-en">NOTIFICATION</span><span class="lang-pt">NOTIFICAÇÃO</span></span>
+      </div>
+      <div style="height:1px;background:linear-gradient(90deg,rgba(56,168,255,.5),rgba(56,168,255,.05));margin-bottom:30px;"></div>
+
+      <!-- title -->
+      <div style="font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:25px;line-height:1.35;letter-spacing:.5px;color:#dbe8f8;margin-bottom:6px;text-wrap:balance;">
+        <span class="lang-en">You have acquired the qualification to become a <span style="color:#7cc4ff;font-weight:700;">Player</span>.</span>
+        <span class="lang-pt">Você adquiriu a qualificação para se tornar um <span style="color:#7cc4ff;font-weight:700;">Jogador</span>.</span>
+      </div>
+      <div style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:38px;letter-spacing:2px;color:#f2f8ff;text-shadow:0 0 26px rgba(56,168,255,.45);margin-bottom:34px;">
+        <span class="lang-en">Accept?</span><span class="lang-pt">Aceita?</span>
+      </div>
+
+      <!-- buttons -->
+      <div style="display:flex;gap:16px;align-items:center;">
+        <a href="Hunter Profile.dc.html" style="flex:1;text-align:center;padding:16px 20px;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:16px;letter-spacing:4px;color:#05060a;background:linear-gradient(120deg,#9dd3ff,#2f7fd6);cursor:pointer;clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px);box-shadow:0 0 28px rgba(56,168,255,.4);" style-hover="box-shadow:0 0 46px rgba(56,168,255,.7)"><span class="lang-en">ACCEPT</span><span class="lang-pt">SIM</span></a>
+        <button style="flex:1;padding:16px 20px;font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:15px;letter-spacing:4px;color:#7f97b3;background:transparent;border:1px solid rgba(96,150,220,.35);cursor:pointer;clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px);" style-hover="border-color:rgba(96,150,220,.7);color:#c6d2e4"><span class="lang-en">DECLINE</span><span class="lang-pt">NÃO</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- skip link -->
+  <a href="Hunter Profile.dc.html" style="position:relative;z-index:2;font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:3px;color:#4e6885;cursor:pointer;animation:appear .6s ease 1.3s both;" style-hover="color:#7cc4ff">
+    <span class="lang-en">SKIP INTRO ▸</span><span class="lang-pt">PULAR INTRO ▸</span>
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: 'en' };
+  renderVals() {
+    return {
+      lang: this.state.lang,
+      setEn: () => this.setState({ lang: 'en' }),
+      setPt: () => this.setState({ lang: 'pt' }),
+    };
+  }
+}
+</script>
+</body>
+</html>

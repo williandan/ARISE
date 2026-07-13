@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { rankForLevel, xpForLevel, type Rank } from "@/lib/leveling";
 import { getQuest } from "@/lib/quests";
+import { SECTIONS } from "@/lib/sections";
 import { useNotificationsStore, type SystemNotification } from "./notificationsStore";
 
 /**
@@ -19,6 +20,8 @@ interface GameState {
   /** XP acumulado DENTRO do nível atual. */
   xp: number;
   completedQuests: string[];
+  /** Seções já visitadas (para a Side Quest "Explorador"). */
+  visitedSections: string[];
 
   // --- preferências ---
   muted: boolean;
@@ -31,6 +34,7 @@ interface GameState {
   addXp: (amount: number) => void;
   completeQuest: (id: string) => void;
   isQuestComplete: (id: string) => boolean;
+  visitSection: (id: string) => void;
   toggleMute: () => void;
   setMuted: (muted: boolean) => void;
   skipIntro: () => void;
@@ -43,6 +47,7 @@ const INITIAL = {
   level: 1,
   xp: 0,
   completedQuests: [] as string[],
+  visitedSections: [] as string[],
   muted: true, // começa MUDO (nunca autoplay)
   introSkipped: false,
   bootSeen: false,
@@ -99,6 +104,19 @@ export const useGameStore = create<GameState>()(
 
       isQuestComplete: (id) => get().completedQuests.includes(id),
 
+      visitSection: (id) => {
+        const { visitedSections } = get();
+        if (visitedSections.includes(id)) return;
+
+        const next = [...visitedSections, id];
+        set({ visitedSections: next });
+
+        // Visitou todas as seções → Side Quest "Explorador".
+        if (SECTIONS.every((s) => next.includes(s))) {
+          get().completeQuest("explorer");
+        }
+      },
+
       toggleMute: () => set((s) => ({ muted: !s.muted })),
       setMuted: (muted) => set({ muted }),
       skipIntro: () => set({ introSkipped: true, bootSeen: true }),
@@ -115,6 +133,7 @@ export const useGameStore = create<GameState>()(
         level: state.level,
         xp: state.xp,
         completedQuests: state.completedQuests,
+        visitedSections: state.visitedSections,
         muted: state.muted,
         introSkipped: state.introSkipped,
         bootSeen: state.bootSeen,

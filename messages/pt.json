@@ -19,7 +19,15 @@
     "c": "Rank C",
     "b": "Rank B",
     "a": "Rank A",
-    "s": "Rank S"
+    "s": "Rank S",
+    "meaning": {
+      "e": "Despertado",
+      "d": "Batedor",
+      "c": "Vanguarda",
+      "b": "Elite",
+      "a": "Nacional",
+      "s": "Monarca"
+    }
   },
   "home": {
     "kicker": "O Sistema reconheceu você",
@@ -108,5 +116,149 @@
     "accept": "Sim",
     "decline": "Não",
     "skip": "Pular intro"
+  },
+  "nav": {
+    "home": "Perfil",
+    "gates": "Gates",
+    "skills": "Skills",
+    "about": "História",
+    "contact": "Contato"
+  },
+  "profile": {
+    "eyebrow": "PERFIL DO MONARCA",
+    "id": "ID · WD-0001",
+    "sRank": "MONARCA RANK S",
+    "roleTitle": "Desenvolvedor Full Stack",
+    "tagline": "O Sistema se curva à sua vontade. Todos os gates caíram.",
+    "plaque": "MONARCA · SOBERANO",
+    "max": "MAX",
+    "plaqueCaption": "Todos os gates conquistados · status fixo no topo",
+    "gatesCleared": "GATES LIMPOS",
+    "skillsLabel": "SKILLS",
+    "explore": "EXPLORAR OS GATES",
+    "resume": "VER CURRÍCULO",
+    "playerVisitor": "JOGADOR · VISITANTE",
+    "rankPathTitle": "CAMINHO DE RANK",
+    "rankPathSub": "Suba de E até o Monarca",
+    "you": "VOCÊ",
+    "activeQuest": "MISSÃO ATIVA",
+    "questProgress": "{done} de {total} objetivos concluídos",
+    "allDone": "Todas as missões principais concluídas",
+    "statsRank": "Rank"
+  },
+  "gates": {
+    "title": "Gates",
+    "subtitle": "Cada projeto é uma dungeon. Limpe os Gates para ganhar XP.",
+    "detected": "{n} DETECTADOS",
+    "unlocked": "DESBLOQUEADO",
+    "lockedLabel": "BLOQUEADO",
+    "enter": "ENTRAR",
+    "diff": "DIF",
+    "gate": "GATE",
+    "boss": "BOSS",
+    "reachRank": "ALCANCE O RANK {rank} PARA DESBLOQUEAR",
+    "gatesCleared": "GATES LIMPOS",
+    "footerHint": "Limpe os Gates desbloqueados para subir de rank e abrir os próximos.",
+    "unlockAt": "Abre no Rank {rank} · Nv. {level}",
+    "viewAnyway": "Ver mesmo assim",
+    "open": "Entrar no Gate",
+    "back": "Voltar aos Gates",
+    "techLabel": "Stack",
+    "statusLabel": "Status",
+    "status": {
+      "planned": "Planejado",
+      "wip": "Em construção",
+      "live": "No ar"
+    },
+    "gateRank": "Gate {rank}",
+    "analyzeCta": "Analisar Dungeon",
+    "analyzeDone": "Dungeon analisada ✓",
+    "analyzeHint": "Os detalhes técnicos e as decisões de arquitetura entram quando o Gate for construído.",
+    "items": {
+      "awakening": {
+        "name": "O Despertar",
+        "tagline": "Daily Quest Tracker",
+        "summary": "App de tarefas gamificado: tarefas dão XP e o usuário sobe de nível. Fundamentos de UI e estado local."
+      },
+      "lesserPortal": {
+        "name": "O Portal Menor",
+        "tagline": "API REST + CRUD com autenticação",
+        "summary": "API Node com Express, JWT e CRUD completo, consumida por um front React. REST, autenticação e SQL — o feijão-com-arroz full-stack."
+      },
+      "integrationDungeon": {
+        "name": "A Dungeon de Integração",
+        "tagline": "Dashboard agregador de APIs externas",
+        "summary": "Painel que unifica várias APIs externas num só lugar — a praia do Willian: integrações de sistemas."
+      },
+      "realtimeBattle": {
+        "name": "O Campo de Batalha em Tempo Real",
+        "tagline": "App com WebSockets",
+        "summary": "Chat ou dashboard ao vivo com Socket.io. Arquitetura em tempo real que poucos têm no portfólio."
+      },
+      "automatedForge": {
+        "name": "A Forja Automatizada",
+        "tagline": "Plataforma de automação de relatórios",
+        "summary": "Ingere dados, gera e agenda relatórios automáticos. Com testes Cypress e pipeline de CI/CD."
+      },
+      "finalBoss": {
+        "name": "O Boss Final",
+        "tagline": "SaaS full-stack completo",
+        "summary": "Auth, banco, back Node robusto, front polido, testes E2E, CI/CD e deploy. O carro-chefe que prova o full-stack."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skill Tree",
+    "subtitle": "Os atributos do Hunter.",
+    "attributesChip": "{n} ATRIBUTOS",
+    "monarchMastery": "MAESTRIA DO MONARCA",
+    "highest": "MAIOR",
+    "spellsTitle": "Habilidades desbloqueadas",
+    "educationTitle": "Formação (lore do Hunter)",
+    "education": {
+      "ucb": "Bacharelado em Engenharia de Software — Universidade Católica de Brasília (2025–2028)",
+      "cubos": "Formação Full Stack — Cubos Academy (2023)"
+    },
+    "attrs": {
+      "str": { "name": "Back-end" },
+      "agi": { "name": "Front-end" },
+      "int": { "name": "Integrações & Automação" },
+      "vit": { "name": "Qualidade & DevOps" },
+      "per": { "name": "Análise de Dados" }
+    },
+    "spells": {
+      "reduction90": {
+        "name": "Redução de 90%",
+        "desc": "Automação de criação de contas (Skymail/AD)."
+      },
+      "branchGuardian": {
+        "name": "Guardião da Branch",
+        "desc": "Bloqueou 60% dos PRs fora de conformidade via testes de integração."
+      },
+      "artifactPurge": {
+        "name": "Purga de Artefatos",
+        "desc": "100% de redução de armazenamento no GitLab."
+      },
+      "monarchVision": {
+        "name": "Visão do Monarca",
+        "desc": "Relatórios de sprint com 100% de precisão de classificação."
+      }
+    }
+  },
+  "about": {
+    "title": "História do Hunter",
+    "subtitle": "A jornada de Willian Daniel.",
+    "p1": "Desenvolvedor full-stack focado em React e Node.js, com força real em integrações de sistemas e automação de processos.",
+    "p2": "Na RCS, conectou serviços como Microsoft Graph, TrueNAS, GLPI, TOTVS e Skymail, e automatizou rotinas que reduziram trabalho manual e elevaram a qualidade das entregas.",
+    "p3": "Guardião de qualidade: testes de integração, Cypress e CI/CD para manter as branches limpas e os relatórios precisos.",
+    "educationTitle": "Formação"
+  },
+  "contact": {
+    "title": "Convocar o Hunter",
+    "subtitle": "Vamos construir algo juntos?",
+    "emailLabel": "E-mail",
+    "githubLabel": "GitHub",
+    "cta": "Enviar e-mail",
+    "note": "O formulário de invocação chega numa próxima fase — por ora, o chamado vai direto ao e-mail."
   }
 }

@@ -19,7 +19,15 @@
     "c": "Rank C",
     "b": "Rank B",
     "a": "Rank A",
-    "s": "Rank S"
+    "s": "Rank S",
+    "meaning": {
+      "e": "Awakened",
+      "d": "Scout",
+      "c": "Vanguard",
+      "b": "Elite",
+      "a": "National",
+      "s": "Monarch"
+    }
   },
   "home": {
     "kicker": "The System has noticed you",
@@ -108,5 +116,149 @@
     "accept": "Yes",
     "decline": "No",
     "skip": "Skip intro"
+  },
+  "nav": {
+    "home": "Profile",
+    "gates": "Gates",
+    "skills": "Skills",
+    "about": "Story",
+    "contact": "Contact"
+  },
+  "profile": {
+    "eyebrow": "MONARCH PROFILE",
+    "id": "ID · WD-0001",
+    "sRank": "S-RANK MONARCH",
+    "roleTitle": "Full Stack Developer",
+    "tagline": "The System bends to your will. Every gate has fallen.",
+    "plaque": "MONARCH · SOVEREIGN",
+    "max": "MAX",
+    "plaqueCaption": "All gates conquered · status locked at the summit",
+    "gatesCleared": "GATES CLEARED",
+    "skillsLabel": "SKILLS",
+    "explore": "EXPLORE THE GATES",
+    "resume": "VIEW RÉSUMÉ",
+    "playerVisitor": "PLAYER · VISITOR",
+    "rankPathTitle": "RANK PATH",
+    "rankPathSub": "Climb from E to the Monarch",
+    "you": "YOU",
+    "activeQuest": "ACTIVE QUEST",
+    "questProgress": "{done} of {total} objectives complete",
+    "allDone": "All main quests complete",
+    "statsRank": "Rank"
+  },
+  "gates": {
+    "title": "Gates",
+    "subtitle": "Each project is a dungeon. Clear Gates to earn XP.",
+    "detected": "{n} DETECTED",
+    "unlocked": "UNLOCKED",
+    "lockedLabel": "LOCKED",
+    "enter": "ENTER GATE",
+    "diff": "DIFF",
+    "gate": "GATE",
+    "boss": "BOSS",
+    "reachRank": "REACH RANK {rank} TO UNLOCK",
+    "gatesCleared": "GATES CLEARED",
+    "footerHint": "Clear unlocked Gates to rank up and open the next ones.",
+    "unlockAt": "Unlocks at Rank {rank} · Lv. {level}",
+    "viewAnyway": "View anyway",
+    "open": "Enter the Gate",
+    "back": "Back to Gates",
+    "techLabel": "Stack",
+    "statusLabel": "Status",
+    "status": {
+      "planned": "Planned",
+      "wip": "In progress",
+      "live": "Live"
+    },
+    "gateRank": "Gate {rank}",
+    "analyzeCta": "Analyze the Dungeon",
+    "analyzeDone": "Dungeon analyzed ✓",
+    "analyzeHint": "Technical details and architecture decisions arrive when the Gate is built.",
+    "items": {
+      "awakening": {
+        "name": "The Awakening",
+        "tagline": "Daily Quest Tracker",
+        "summary": "A gamified to-do app: tasks grant XP and the user levels up. Fundamentals of UI and local state."
+      },
+      "lesserPortal": {
+        "name": "The Lesser Portal",
+        "tagline": "REST API + CRUD with auth",
+        "summary": "A Node API with Express, JWT and full CRUD, consumed by a React front end. REST, auth and SQL — the full-stack staple."
+      },
+      "integrationDungeon": {
+        "name": "The Integration Dungeon",
+        "tagline": "External-API aggregator dashboard",
+        "summary": "A panel that unifies several external APIs in one place — Willian's home turf: systems integration."
+      },
+      "realtimeBattle": {
+        "name": "The Real-Time Battlefield",
+        "tagline": "WebSockets app",
+        "summary": "A live chat or dashboard with Socket.io. Real-time architecture that few portfolios show."
+      },
+      "automatedForge": {
+        "name": "The Automated Forge",
+        "tagline": "Report automation platform",
+        "summary": "Ingests data, generates and schedules automated reports. With Cypress tests and a CI/CD pipeline."
+      },
+      "finalBoss": {
+        "name": "The Final Boss",
+        "tagline": "Complete full-stack SaaS",
+        "summary": "Auth, database, robust Node back end, polished front end, E2E tests, CI/CD and deploy. The flagship that proves full-stack."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skill Tree",
+    "subtitle": "The Hunter's attributes.",
+    "attributesChip": "{n} ATTRIBUTES",
+    "monarchMastery": "MONARCH MASTERY",
+    "highest": "HIGHEST",
+    "spellsTitle": "Unlocked skills",
+    "educationTitle": "Education (the Hunter's lore)",
+    "education": {
+      "ucb": "B.Sc. in Software Engineering — Catholic University of Brasília (2025–2028)",
+      "cubos": "Full Stack program — Cubos Academy (2023)"
+    },
+    "attrs": {
+      "str": { "name": "Back-end" },
+      "agi": { "name": "Front-end" },
+      "int": { "name": "Integrations & Automation" },
+      "vit": { "name": "Quality & DevOps" },
+      "per": { "name": "Data Analysis" }
+    },
+    "spells": {
+      "reduction90": {
+        "name": "90% Reduction",
+        "desc": "Automated account creation (Skymail/AD)."
+      },
+      "branchGuardian": {
+        "name": "Branch Guardian",
+        "desc": "Blocked 60% of non-compliant PRs via integration tests."
+      },
+      "artifactPurge": {
+        "name": "Artifact Purge",
+        "desc": "100% storage reduction on GitLab."
+      },
+      "monarchVision": {
+        "name": "Monarch's Vision",
+        "desc": "Sprint reports with 100% classification accuracy."
+      }
+    }
+  },
+  "about": {
+    "title": "The Hunter's Story",
+    "subtitle": "Willian Daniel's journey.",
+    "p1": "A full-stack developer focused on React and Node.js, with real strength in systems integration and process automation.",
+    "p2": "At RCS he connected services such as Microsoft Graph, TrueNAS, GLPI, TOTVS and Skymail, and automated routines that cut manual work and raised delivery quality.",
+    "p3": "A quality guardian: integration tests, Cypress and CI/CD to keep branches clean and reports accurate.",
+    "educationTitle": "Education"
+  },
+  "contact": {
+    "title": "Summon the Hunter",
+    "subtitle": "Shall we build something together?",
+    "emailLabel": "Email",
+    "githubLabel": "GitHub",
+    "cta": "Send an email",
+    "note": "The summoning form arrives in a later phase — for now, the call goes straight to email."
   }
 }

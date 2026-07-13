@@ -6,8 +6,8 @@ import { useGameStore } from "@/store/gameStore";
 import { useNotificationsStore } from "@/store/notificationsStore";
 import { rankForLevel } from "@/lib/leveling";
 import { sound, type Sfx } from "@/lib/sound";
-import { Hud } from "@/components/system/Hud";
 import { NotificationCenter } from "@/components/system/NotificationCenter";
+import { QuestLog } from "@/components/system/QuestLog";
 
 const KIND_SFX: Record<string, Sfx> = {
   quest: "notify",
@@ -68,8 +68,8 @@ export function SystemProvider() {
 
   return (
     <>
-      <Hud />
       <NotificationCenter />
+      <QuestLog />
     </>
   );
 }

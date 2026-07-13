@@ -1,41 +1,63 @@
 @import "tailwindcss";
 
 /*
-  ARISE — Design System (Solo Leveling / "Sistema")
-  Tokens de cor, tipografia e utilidades de glow.
-  Ref.: CLAUDE.md ("Design system") e docs/PLANO.md (seção 7).
+  ARISE — Design System (fiel ao handoff do Claude Design)
+  Ref.: docs/design/.../README.md (tokens hi-fi).
+  Jornada de cor: ciano (visitante E-rank) → roxo (Monarca S-rank).
 */
 
 @theme {
-  /* ---- Fundos (preto / azul-noite) ---- */
-  --color-bg-base: #05060a; /* fundo principal */
-  --color-bg-elevated: #0a0e1a; /* superfícies elevadas */
-  --color-bg-panel: #0d1424; /* janelas do Sistema */
+  /* ---- Fundos ---- */
+  --color-bg-base: #05060a;
+  --color-bg-elevated: #0a0e1a;
+  --color-bg-panel: #0d1424;
 
-  /* ---- Ciano do Sistema (visitante — nasce E-rank azul) ---- */
+  /* ---- Ciano (Sistema / visitante) ---- */
+  --color-cyan: #38bdf8;
+  --color-cyan-light: #7cc4ff;
+  --color-cyan-deep: #2f7fd6;
+  /* aliases antigos */
   --color-system-cyan: #38bdf8;
-  --color-system-cyan-bright: #4ea8ff;
+  --color-system-cyan-bright: #7cc4ff;
 
-  /* ---- Roxo Monarca (Willian — S-rank fixo) ---- */
-  --color-monarch: #8b5cf6;
-  --color-monarch-deep: #6d28d9;
+  /* ---- Roxo (Monarca) ---- */
+  --color-monarch: #a855f7;
+  --color-monarch-light: #c99bff;
+  --color-monarch-mid: #8b5cf6;
+  --color-monarch-deep: #7c3aed;
 
-  /* ---- Texto (branco levemente azulado) ---- */
-  --color-ink: #e6edf7;
-  --color-ink-dim: #9fb0c8;
-  --color-ink-faint: #5f6f88;
+  /* ---- Ouro (S-rank / MAX / conquistas) ---- */
+  --color-gold: #f5c542;
+  --color-gold-deep: #d9b64f;
 
-  /* ---- Acentos de rank E–S ---- */
-  --color-rank-e: #9ca3af; /* cinza */
-  --color-rank-d: #22c55e; /* verde */
-  --color-rank-c: #38bdf8; /* azul */
-  --color-rank-b: #8b5cf6; /* roxo */
-  --color-rank-a: #f59e0b; /* laranja */
-  --color-rank-s: #fbbf24; /* dourado (com toque vermelho) */
+  /* ---- Semânticas ---- */
+  --color-success: #59e0a3;
+  --color-alert: #ff6b6b;
+
+  /* ---- Ranks (E→S: cinza→verde→azul→roxo→laranja→ouro) ---- */
+  --color-rank-e: #c5ccd8;
+  --color-rank-d: #34d399;
+  --color-rank-c: #38bdf8;
+  --color-rank-b: #8b5cf6;
+  --color-rank-a: #f59e0b;
+  --color-rank-s: #f5c542;
+
+  /* ---- Texto ---- */
+  --color-ink: #f2f7ff;
+  --color-ink-purple: #f4eeff;
+  --color-body: #c6d2e4;
+  --color-body-purple: #d0c6e4;
+  --color-ink-dim: #c6d2e4;
+  --color-muted: #8ea3bf;
+  --color-muted-2: #5f7d9e;
+  --color-muted-purple: #8a6ea8;
+  --color-ink-faint: #5f7d9e;
 
   /* ---- Tipografia ---- */
-  --font-display: var(--font-rajdhani), "Segoe UI", sans-serif; /* UI sci-fi */
-  --font-sans: var(--font-inter), system-ui, sans-serif; /* corpo legível */
+  --font-display: var(--font-chakra), "Segoe UI", sans-serif; /* títulos / UI */
+  --font-numeric: var(--font-orbitron), sans-serif; /* níveis, XP, ranks, scores */
+  --font-sans: var(--font-inter), system-ui, sans-serif; /* corpo */
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace; /* terminal (boot) */
 }
 
 /* ============================================================
@@ -47,12 +69,123 @@
 
 body {
   background: var(--color-bg-base);
-  color: var(--color-ink);
+  color: var(--color-body);
   font-family: var(--font-sans);
 }
 
-/* Acessibilidade: respeitar prefers-reduced-motion globalmente.
-   Componentes também checam via hook, mas isto é a rede de segurança. */
+/* ============================================================
+   Utilidades de glow
+   ============================================================ */
+@utility glow-cyan {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color-cyan) 45%, transparent),
+    0 0 22px -2px color-mix(in srgb, var(--color-cyan) 55%, transparent);
+}
+@utility glow-purple {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color-monarch) 50%, transparent),
+    0 0 24px -2px color-mix(in srgb, var(--color-monarch) 60%, transparent);
+}
+@utility glow-rank {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, currentColor 45%, transparent),
+    0 0 20px -2px color-mix(in srgb, currentColor 55%, transparent);
+}
+@utility text-glow-cyan {
+  text-shadow: 0 0 14px color-mix(in srgb, var(--color-cyan) 70%, transparent);
+}
+@utility text-glow-purple {
+  text-shadow: 0 0 14px color-mix(in srgb, var(--color-monarch) 70%, transparent);
+}
+@utility text-glow-gold {
+  text-shadow: 0 0 14px color-mix(in srgb, var(--color-gold) 70%, transparent);
+}
+
+/* ============================================================
+   Animações (ambiente + UI). Ref.: README "Motion tokens".
+   ============================================================ */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+@keyframes scanmove {
+  0% {
+    transform: translateY(-160px);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+@keyframes floatp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px);
+    opacity: 0;
+  }
+}
+@keyframes shine {
+  0% {
+    transform: translateX(-60px);
+  }
+  100% {
+    transform: translateX(340px);
+  }
+}
+@keyframes lockpulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 3px currentColor);
+    opacity: 0.75;
+  }
+  50% {
+    filter: drop-shadow(0 0 10px currentColor);
+    opacity: 1;
+  }
+}
+
+/* Classes utilitárias de animação */
+.anim-blink {
+  animation: blink 1s steps(1) infinite;
+}
+.anim-pulse {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+.anim-lockpulse {
+  animation: lockpulse 2.4s ease-in-out infinite;
+}
+
+/* Scanlines (overlay sutil) */
+.scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.02) 0 1px,
+    transparent 1px 3px
+  );
+}
+
+/* ============================================================
+   Acessibilidade: prefers-reduced-motion desliga loops ambiente.
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -62,34 +195,4 @@ body {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* ============================================================
-   Utilidades de "glow" (janelas azuis do Sistema)
-   ============================================================ */
-@utility glow-cyan {
-  box-shadow:
-    0 0 0 1px color-mix(in srgb, var(--color-system-cyan) 45%, transparent),
-    0 0 22px -2px color-mix(in srgb, var(--color-system-cyan) 55%, transparent);
-}
-
-@utility glow-purple {
-  box-shadow:
-    0 0 0 1px color-mix(in srgb, var(--color-monarch) 50%, transparent),
-    0 0 24px -2px color-mix(in srgb, var(--color-monarch) 60%, transparent);
-}
-
-/* Glow parametrizável pela cor de texto atual (ex.: cards de rank). */
-@utility glow-rank {
-  box-shadow:
-    0 0 0 1px color-mix(in srgb, currentColor 45%, transparent),
-    0 0 20px -2px color-mix(in srgb, currentColor 55%, transparent);
-}
-
-@utility text-glow-cyan {
-  text-shadow: 0 0 12px color-mix(in srgb, var(--color-system-cyan) 70%, transparent);
-}
-
-@utility text-glow-purple {
-  text-shadow: 0 0 12px color-mix(in srgb, var(--color-monarch) 70%, transparent);
 }
