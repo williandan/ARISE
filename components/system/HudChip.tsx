@@ -6,6 +6,7 @@ import { rankForLevel, xpForLevel, progressionColor } from "@/lib/leveling";
 import { RANK_HEX } from "@/lib/colors";
 import { Panel } from "@/components/ui/Panel";
 import { Hexagon } from "@/components/ui/Hexagon";
+import { Bar } from "@/components/ui/Bar";
 
 /** Pílula compacta de status do VISITANTE (hex + LEVEL + barra XP + RANK). */
 export function HudChip() {
@@ -33,12 +34,14 @@ export function HudChip() {
               {String(level).padStart(2, "0")}
             </span>
           </div>
-          <div className="h-1.5 w-28 overflow-hidden rounded-full bg-white/8">
-            <div
-              className="h-full rounded-full transition-[width] duration-500"
-              style={{ width: `${pct}%`, backgroundColor: color, boxShadow: `0 0 8px ${color}` }}
-            />
-          </div>
+          <Bar
+            value={pct}
+            fill={color}
+            height={6}
+            glow={`0 0 8px ${color}`}
+            shine={false}
+            className="w-28"
+          />
         </div>
         <span
           className="font-display rounded-sm border px-1.5 py-0.5 text-[10px] font-bold tracking-widest"
