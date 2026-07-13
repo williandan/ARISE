@@ -29,14 +29,6 @@
       "s": "Monarca"
     }
   },
-  "home": {
-    "kicker": "O Sistema reconheceu você",
-    "title": "ARISE",
-    "subtitle": "Portfólio Full-Stack de Willian Daniel",
-    "intro": "Você adquiriu a qualificação para se tornar um Jogador. Explore os Gates, ganhe XP e suba de Rank E até S.",
-    "enter": "Despertar como Jogador",
-    "skipToContent": "Ir direto aos projetos"
-  },
   "hud": {
     "player": "Jogador",
     "level": "Nível",

@@ -4,6 +4,7 @@ import { SectionTracker } from "@/components/system/SectionTracker";
 import { Ambient } from "@/components/ui/Ambient";
 import { Panel } from "@/components/ui/Panel";
 import { Hexagon } from "@/components/ui/Hexagon";
+import { Bar } from "@/components/ui/Bar";
 
 export default async function SkillsPage() {
   const t = await getTranslations("skills");
@@ -65,20 +66,15 @@ export default async function SkillsPage() {
                       </p>
                     </div>
 
-                    {/* Barra segmentada */}
-                    <div className="relative h-4 flex-1 overflow-hidden rounded-sm bg-white/5">
-                      <div
-                        className="h-full rounded-sm"
-                        style={{ width: `${attr.value}%`, background: barFill }}
-                      />
-                      <div
-                        className="pointer-events-none absolute inset-0"
-                        style={{
-                          background:
-                            "repeating-linear-gradient(90deg, transparent 0 32px, rgba(0,0,0,0.35) 32px 34px)",
-                        }}
-                      />
-                    </div>
+                    {/* Barra segmentada com varredura de brilho */}
+                    <Bar
+                      value={attr.value}
+                      fill={barFill}
+                      height={attr.highest ? 18 : 16}
+                      segmented
+                      glow={`0 0 12px -2px ${attr.color}`}
+                      className="flex-1"
+                    />
 
                     <div className="w-16 shrink-0 text-right">
                       <span

@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { useGameStore } from "@/store/gameStore";
 import { MAIN_QUESTS } from "@/lib/quests";
 import { Panel } from "@/components/ui/Panel";
+import { Bar } from "@/components/ui/Bar";
 
 /** Card "Missão Ativa" — próxima Main Quest incompleta + progresso. */
 export function ActiveQuest() {
@@ -36,12 +37,7 @@ export function ActiveQuest() {
           {active ? tq(`items.${active.id}.title`) : t("allDone")}
         </h3>
 
-        <div className="h-1.5 overflow-hidden rounded-full bg-white/8">
-          <div
-            className="h-full rounded-full transition-[width] duration-500"
-            style={{ width: `${pct}%`, background: "linear-gradient(90deg, #c99bff, #d9b64f)" }}
-          />
-        </div>
+        <Bar value={pct} fill="linear-gradient(90deg, #c99bff, #d9b64f)" height={6} />
 
         <p className="text-muted-2 text-[11px]">{t("questProgress", { done: doneCount, total })}</p>
       </div>

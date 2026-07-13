@@ -7,6 +7,7 @@ import { rankForLevel, xpForLevel, progressionColor } from "@/lib/leveling";
 import { RANK_HEX } from "@/lib/colors";
 import { Panel } from "@/components/ui/Panel";
 import { Hexagon } from "@/components/ui/Hexagon";
+import { Bar } from "@/components/ui/Bar";
 
 /** HUD do visitante (coluna direita da Home). */
 export function VisitorHud() {
@@ -53,12 +54,7 @@ export function VisitorHud() {
                 {String(level).padStart(2, "0")}
               </span>
             </div>
-            <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/8">
-              <div
-                className="h-full rounded-full transition-[width] duration-500"
-                style={{ width: `${pct}%`, backgroundColor: color, boxShadow: `0 0 10px ${color}` }}
-              />
-            </div>
+            <Bar value={pct} fill={color} height={8} glow={`0 0 10px ${color}`} className="mt-2" />
             <div className="text-muted-2 font-numeric mt-1 text-[11px]">
               {th("xpToNext", { current: xp, needed })}
             </div>
