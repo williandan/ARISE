@@ -29,14 +29,6 @@
       "s": "Monarch"
     }
   },
-  "home": {
-    "kicker": "The System has noticed you",
-    "title": "ARISE",
-    "subtitle": "Willian Daniel's Full-Stack Portfolio",
-    "intro": "You have acquired the qualification to become a Player. Explore the Gates, earn XP and climb from Rank E to S.",
-    "enter": "Awaken as a Player",
-    "skipToContent": "Go straight to the projects"
-  },
   "hud": {
     "player": "Player",
     "level": "Level",
