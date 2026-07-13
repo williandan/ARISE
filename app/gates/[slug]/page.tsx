@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { GATES, getGateBySlug } from "@/content/gates";
 import { Hexagon } from "@/components/ui/Hexagon";
 import { AnalyzeDungeon } from "@/components/gates/AnalyzeDungeon";
+import { DailyQuestTracker } from "@/components/gates/DailyQuestTracker";
 import { SectionTracker } from "@/components/system/SectionTracker";
 import { Ambient } from "@/components/ui/Ambient";
 import { RANK_HEX } from "@/lib/colors";
@@ -91,8 +92,23 @@ export default async function GatePage({ params }: { params: Params }) {
           </ul>
         </section>
 
+        {gate.demo === "dailyQuestTracker" && <GateDemo />}
+
         <AnalyzeDungeon />
       </main>
     </>
+  );
+}
+
+async function GateDemo() {
+  const t = await getTranslations("dqt");
+  return (
+    <section className="mt-10">
+      <h2 className="font-display text-cyan mb-1 text-xs font-semibold tracking-[0.3em] uppercase">
+        ◆ {t("liveDemo")}
+      </h2>
+      <p className="text-muted mb-4 max-w-2xl text-sm leading-relaxed">{t("intro")}</p>
+      <DailyQuestTracker />
+    </section>
   );
 }

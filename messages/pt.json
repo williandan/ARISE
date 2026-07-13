@@ -254,5 +254,23 @@
     "githubLabel": "GitHub",
     "cta": "Enviar e-mail",
     "note": "O formulário de invocação chega numa próxima fase — por ora, o chamado vai direto ao e-mail."
+  },
+  "dqt": {
+    "liveDemo": "Demo ao vivo",
+    "intro": "Este Gate roda de verdade. Complete missões diárias para ganhar XP e subir de nível — a mesma mecânica do Sistema, em miniatura.",
+    "level": "Nível",
+    "completedToday": "{done}/{total} concluídas hoje",
+    "addPlaceholder": "Nova missão diária...",
+    "add": "Adicionar",
+    "newDay": "Novo dia",
+    "reset": "Zerar",
+    "empty": "Nenhuma missão ainda. Adicione a primeira!",
+    "streak": "{n}",
+    "remove": "Remover missão",
+    "toggle": "Concluir missão",
+    "xpEach": "+{xp} XP por missão",
+    "seed1": "Beber água",
+    "seed2": "Ler 20 minutos",
+    "seed3": "Exercitar-se"
   }
 }
