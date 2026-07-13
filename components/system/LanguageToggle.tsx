@@ -6,7 +6,7 @@ import { setLocale } from "@/i18n/actions";
 import { locales, type Locale } from "@/i18n/config";
 import { useGameStore } from "@/store/gameStore";
 
-/** Toggle PT ⇄ EN (Side Quest "Poliglota"). */
+/** Toggle segmentado PT ⇄ EN (Side Quest "Poliglota"). */
 export function LanguageToggle() {
   const locale = useLocale();
   const tc = useTranslations("common");
@@ -22,7 +22,11 @@ export function LanguageToggle() {
   }
 
   return (
-    <div className="flex items-center gap-1" role="group" aria-label={tc("language")}>
+    <div
+      className="border-cyan/25 flex items-center overflow-hidden rounded-sm border bg-white/3"
+      role="group"
+      aria-label={tc("language")}
+    >
       {locales.map((l) => {
         const active = l === locale;
         return (
@@ -31,8 +35,8 @@ export function LanguageToggle() {
             type="button"
             onClick={() => choose(l)}
             aria-pressed={active}
-            className={`font-display rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-widest uppercase transition-colors ${
-              active ? "text-system-cyan text-glow-cyan" : "text-ink-faint hover:text-ink-dim"
+            className={`font-display px-2 py-1 text-[11px] font-semibold tracking-widest uppercase transition-colors ${
+              active ? "bg-cyan text-bg-base" : "text-muted hover:text-ink"
             }`}
           >
             {l}
