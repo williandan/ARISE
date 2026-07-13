@@ -3,9 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { GATES, getGateBySlug } from "@/content/gates";
-import { RankBadge } from "@/components/ui/RankBadge";
+import { Hexagon } from "@/components/ui/Hexagon";
 import { AnalyzeDungeon } from "@/components/gates/AnalyzeDungeon";
 import { SectionTracker } from "@/components/system/SectionTracker";
+import { Ambient } from "@/components/ui/Ambient";
+import { RANK_HEX } from "@/lib/colors";
 
 type Params = Promise<{ slug: string }>;
 
@@ -30,53 +32,66 @@ export default async function GatePage({ params }: { params: Params }) {
   if (!gate) notFound();
 
   const t = await getTranslations("gates");
+  const color = RANK_HEX[gate.rank];
 
   return (
-    <main className="mx-auto w-full max-w-3xl flex-1 px-6 pt-36 pb-24">
-      {/* Entrar num Gate = Main Quest "firstGate" */}
-      <SectionTracker section="gates" quest="firstGate" />
+    <>
+      <Ambient tone="cyan" />
+      <main className="mx-auto w-full max-w-3xl flex-1 px-6 pt-28 pb-24">
+        {/* Entrar num Gate = Main Quest "firstGate" */}
+        <SectionTracker section="gates" quest="firstGate" />
 
-      <Link
-        href="/gates"
-        className="text-ink-dim hover:text-system-cyan font-display text-xs font-semibold tracking-widest uppercase"
-      >
-        ← {t("back")}
-      </Link>
+        <Link
+          href="/gates"
+          className="text-muted hover:text-cyan font-display text-xs font-semibold tracking-widest uppercase"
+        >
+          ← {t("back")}
+        </Link>
 
-      <header className="mt-6 flex items-center gap-5">
-        <RankBadge rank={gate.rank} size="lg" />
-        <div>
-          <h1 className="font-display text-ink text-3xl font-bold tracking-wide sm:text-4xl">
-            {t(`items.${gate.id}.name`)}
-          </h1>
-          <p className="text-system-cyan mt-1">{t(`items.${gate.id}.tagline`)}</p>
-        </div>
-      </header>
-
-      <div className="mt-4 flex items-center gap-2 text-[11px] tracking-widest uppercase">
-        <span className="text-ink-faint">{t("statusLabel")}:</span>
-        <span className="text-ink-dim">{t(`status.${gate.status}`)}</span>
-      </div>
-
-      <p className="text-ink-dim mt-6 max-w-2xl leading-relaxed">{t(`items.${gate.id}.summary`)}</p>
-
-      <section className="mt-8">
-        <h2 className="font-display text-ink-dim text-xs font-semibold tracking-[0.2em] uppercase">
-          {t("techLabel")}
-        </h2>
-        <ul className="mt-3 flex flex-wrap gap-2">
-          {gate.tech.map((tech) => (
-            <li
-              key={tech}
-              className="bg-bg-panel/60 text-ink rounded border border-white/5 px-2.5 py-1 text-sm"
+        <header className="mt-6 flex items-center gap-5">
+          <Hexagon label={gate.rank} sub="RANK" color={color} size={72} labelClassName="text-2xl" />
+          <div>
+            <span
+              className="font-display text-[10px] font-semibold tracking-[0.3em] uppercase"
+              style={{ color: `${color}bb` }}
             >
-              {tech}
-            </li>
-          ))}
-        </ul>
-      </section>
+              {t("gate")} {String(GATES.indexOf(gate) + 1).padStart(2, "0")}
+            </span>
+            <h1 className="font-display text-ink text-3xl font-bold tracking-wide sm:text-4xl">
+              {t(`items.${gate.id}.name`)}
+            </h1>
+            <p className="mt-1" style={{ color }}>
+              {t(`items.${gate.id}.tagline`)}
+            </p>
+          </div>
+        </header>
 
-      <AnalyzeDungeon />
-    </main>
+        <div className="mt-4 flex items-center gap-2 text-[11px] tracking-widest uppercase">
+          <span className="text-muted-2">{t("statusLabel")}:</span>
+          <span className="text-muted">{t(`status.${gate.status}`)}</span>
+        </div>
+
+        <p className="text-body mt-6 max-w-2xl leading-relaxed">{t(`items.${gate.id}.summary`)}</p>
+
+        <section className="mt-8">
+          <h2 className="font-display text-muted text-xs font-semibold tracking-[0.2em] uppercase">
+            {t("techLabel")}
+          </h2>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {gate.tech.map((tech) => (
+              <li
+                key={tech}
+                className="font-display rounded-sm border px-2.5 py-1 text-sm"
+                style={{ color, borderColor: `${color}4d`, background: `${color}14` }}
+              >
+                {tech}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <AnalyzeDungeon />
+      </main>
+    </>
   );
 }

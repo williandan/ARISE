@@ -3,64 +3,138 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useGameStore } from "@/store/gameStore";
-import { isGateUnlocked, RANK_MIN_LEVEL } from "@/lib/leveling";
+import { isGateUnlocked } from "@/lib/leveling";
 import type { Gate } from "@/content/gates";
-import { RankBadge } from "@/components/ui/RankBadge";
+import { RANK_HEX } from "@/lib/colors";
+import { Panel } from "@/components/ui/Panel";
+import { Hexagon } from "@/components/ui/Hexagon";
 
-/**
- * Card de um Gate na grade. Gates de rank alto aparecem trancados com cadeado
- * até o visitante ter nível — mas sempre há "ver mesmo assim" (não trava recrutador).
- * Ref.: docs/PLANO.md §2.5.
- */
-export function GateCard({ gate }: { gate: Gate }) {
+const ENTER_CUT =
+  "polygon(9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%, 0 9px)";
+
+/** Card de um Gate — dungeon com rank; alto rank trancado até subir de nível. */
+export function GateCard({ gate, index }: { gate: Gate; index: number }) {
   const t = useTranslations("gates");
   const hasHydrated = useGameStore((s) => s.hasHydrated);
   const level = useGameStore((s) => s.level);
 
-  // Antes de reidratar, assume o pior caso (nível 1) — evita "piscar" desbloqueado.
   const unlocked = hasHydrated && isGateUnlocked(level, gate.rank);
+  const color = RANK_HEX[gate.rank];
   const href = `/gates/${gate.slug}`;
+  const num = String(index + 1).padStart(2, "0");
+
+  const border = `linear-gradient(160deg, ${color}, color-mix(in srgb, ${color} 40%, #05060a))`;
 
   return (
     <Link
       href={href}
-      className="group bg-bg-panel/60 focus-visible:ring-system-cyan/60 relative flex flex-col gap-3 rounded-lg border border-white/5 p-5 transition-colors hover:border-white/15 focus-visible:ring-2 focus-visible:outline-none"
+      className="group block h-full transition-transform duration-200 hover:-translate-y-1"
     >
-      <div className="flex items-start justify-between gap-3">
-        <RankBadge rank={gate.rank} locked={!unlocked} />
-        <span className="text-ink-faint text-[11px] tracking-widest uppercase">
-          {t(`status.${gate.status}`)}
-        </span>
-      </div>
+      <Panel
+        cut={22}
+        border={unlocked ? border : `linear-gradient(160deg, ${color}55, ${color}22)`}
+        glow={unlocked ? `0 0 26px -8px ${color}` : "none"}
+        className="h-full"
+      >
+        <div
+          className="relative flex h-full flex-col gap-3 p-5"
+          style={{ opacity: unlocked ? 1 : 0.82 }}
+        >
+          {/* hatch nos trancados */}
+          {!unlocked && (
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background: `repeating-linear-gradient(45deg, transparent 0 18px, ${color}0d 18px 20px)`,
+              }}
+            />
+          )}
 
-      <div>
-        <h2 className="font-display text-ink text-lg font-bold tracking-wide">
-          {t(`items.${gate.id}.name`)}
-        </h2>
-        <p className="text-system-cyan text-sm">{t(`items.${gate.id}.tagline`)}</p>
-      </div>
+          {/* hexágono do canto */}
+          <div className="absolute top-4 right-4">
+            <Hexagon
+              label={gate.rank}
+              sub="RANK"
+              color={color}
+              size={46}
+              locked={!unlocked}
+              labelClassName="text-lg"
+            />
+          </div>
 
-      <ul className="flex flex-wrap gap-1.5">
-        {gate.tech.map((tech) => (
-          <li
-            key={tech}
-            className="bg-bg-base/70 text-ink-dim rounded border border-white/5 px-1.5 py-0.5 text-[11px]"
+          <span
+            className="font-display text-[10px] font-semibold tracking-[0.3em] uppercase"
+            style={{ color: `${color}bb` }}
           >
-            {tech}
-          </li>
-        ))}
-      </ul>
-
-      <span className="font-display mt-1 text-xs font-semibold tracking-widest uppercase">
-        {unlocked ? (
-          <span className="text-system-cyan group-hover:text-glow-cyan">{t("open")} →</span>
-        ) : (
-          <span className="text-ink-faint">
-            🔒 {t("unlockAt", { rank: gate.rank, level: RANK_MIN_LEVEL[gate.rank] })}
-            <span className="text-ink-dim group-hover:text-ink ml-2">· {t("viewAnyway")}</span>
+            {t("gate")} {num}
+            {gate.boss && <span className="text-rank-s ml-2">· {t("boss")}</span>}
           </span>
-        )}
-      </span>
+
+          <h2 className="font-display text-ink mr-14 text-xl leading-tight font-bold tracking-wide">
+            {t(`items.${gate.id}.name`)}
+          </h2>
+
+          <p className="text-muted mr-2 text-[13px] leading-snug">
+            {t(`items.${gate.id}.summary`)}
+          </p>
+
+          <ul className="flex flex-wrap gap-1.5">
+            {gate.tech.map((tech) => (
+              <li
+                key={tech}
+                className="font-display rounded-sm border px-1.5 py-0.5 text-[11px]"
+                style={{ color, borderColor: `${color}4d`, background: `${color}14` }}
+              >
+                {tech}
+              </li>
+            ))}
+          </ul>
+
+          {/* rodapé */}
+          <div className="mt-auto flex items-end justify-between gap-2 pt-2">
+            {unlocked ? (
+              <>
+                <div className="flex flex-col gap-1">
+                  <span className="text-muted-2 text-[9px] tracking-widest">{t("diff")}</span>
+                  <div className="flex gap-1">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <span
+                        key={i}
+                        className="inline-block h-2 w-2 rotate-45"
+                        style={{
+                          background: i < gate.difficulty ? color : "rgba(255,255,255,0.1)",
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <span
+                  className="font-display text-[11px] font-bold tracking-widest text-[#05060a]"
+                  style={{ clipPath: ENTER_CUT, background: border, padding: "7px 14px" }}
+                >
+                  {t("enter")} ▸
+                </span>
+              </>
+            ) : (
+              <div className="flex w-full items-center justify-between gap-2">
+                <span className="anim-lockpulse text-lg" style={{ color }} aria-hidden>
+                  🔒
+                </span>
+                <span
+                  className="font-display text-right text-[10px] leading-tight font-semibold tracking-wide"
+                  style={{ color: `${color}cc` }}
+                >
+                  {t("reachRank", { rank: gate.rank })}
+                  <span className="text-muted-2 group-hover:text-muted block underline">
+                    {t("viewAnyway")} ▸
+                  </span>
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+      </Panel>
     </Link>
   );
 }
