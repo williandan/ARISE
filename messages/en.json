@@ -113,7 +113,8 @@
   },
   "boot": {
     "detecting": "Detecting visitor qualification...",
-    "prompt": "You have acquired the qualification to become a Player. Do you accept?",
+    "qualification": "You have acquired the qualification to become a <player>Player</player>.",
+    "question": "Accept?",
     "accept": "Yes",
     "decline": "No",
     "skip": "Skip intro"
