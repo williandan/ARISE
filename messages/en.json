@@ -52,6 +52,7 @@
   },
   "system": {
     "windowTitle": "SYSTEM",
+    "notification": "Notification",
     "questComplete": "Quest complete",
     "levelUp": "LEVEL UP",
     "rankUp": "RANK UP",
