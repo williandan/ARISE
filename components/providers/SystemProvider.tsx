@@ -8,6 +8,8 @@ import { rankForLevel } from "@/lib/leveling";
 import { sound, type Sfx } from "@/lib/sound";
 import { NotificationCenter } from "@/components/system/NotificationCenter";
 import { QuestLog } from "@/components/system/QuestLog";
+import { BootScreen } from "@/components/boot/BootScreen";
+import { EasterEgg } from "@/components/system/EasterEgg";
 
 const KIND_SFX: Record<string, Sfx> = {
   quest: "notify",
@@ -51,13 +53,14 @@ export function SystemProvider() {
     }
   }, [notifications]);
 
-  // "Bem-vindo de volta, Jogador de Rank X." — só se já houver progresso salvo.
+  // "Bem-vindo de volta, Jogador de Rank X." — só para visitante recorrente
+  // (já passou pela tela de boot numa sessão anterior).
   useEffect(() => {
     if (!hasHydrated || welcomedRef.current) return;
     welcomedRef.current = true;
 
-    const { level, completedQuests } = useGameStore.getState();
-    if (completedQuests.length > 0) {
+    const { level, bootSeen } = useGameStore.getState();
+    if (bootSeen) {
       const rank = rankForLevel(level);
       useNotificationsStore.getState().push({
         kind: "info",
@@ -68,8 +71,10 @@ export function SystemProvider() {
 
   return (
     <>
+      <BootScreen />
       <NotificationCenter />
       <QuestLog />
+      <EasterEgg />
     </>
   );
 }
