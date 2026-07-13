@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <>
       <Ambient tone="purple" grid />
-      {/* Chegar na Home = "despertar" (até a tela de boot da Fase 3 existir) */}
-      <SectionTracker section="home" quest="awaken" />
+      {/* A missão "despertar" é concedida na tela de boot; aqui só marca a visita. */}
+      <SectionTracker section="home" />
 
       <main className="mx-auto flex w-full max-w-[1600px] flex-1 flex-col justify-center px-4 pt-24 pb-24 sm:px-8">
         <div className="grid items-stretch gap-6 lg:grid-cols-[1.55fr_1fr]">

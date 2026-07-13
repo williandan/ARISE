@@ -38,8 +38,9 @@ export default async function GatePage({ params }: { params: Params }) {
     <>
       <Ambient tone="cyan" />
       <main className="mx-auto w-full max-w-3xl flex-1 px-6 pt-28 pb-24">
-        {/* Entrar num Gate = Main Quest "firstGate" */}
+        {/* Entrar num Gate = Main Quest "firstGate"; o Gate rank S = "boss" */}
         <SectionTracker section="gates" quest="firstGate" />
+        {gate.boss && <SectionTracker section="gates" quest="boss" />}
 
         <Link
           href="/gates"

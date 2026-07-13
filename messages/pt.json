@@ -113,7 +113,8 @@
   },
   "boot": {
     "detecting": "Detectando qualificação do visitante...",
-    "prompt": "Você adquiriu a qualificação para se tornar um Jogador. Aceita?",
+    "qualification": "Você adquiriu a qualificação para se tornar um <player>Jogador</player>.",
+    "question": "Aceita?",
     "accept": "Sim",
     "decline": "Não",
     "skip": "Pular intro"
