@@ -22,6 +22,8 @@ export interface Gate {
   status: GateStatus;
   /** Gate final (marca "BOSS"). */
   boss?: boolean;
+  /** Demo interativa embutida na página do Gate. */
+  demo?: "dailyQuestTracker";
   repoUrl?: string;
   demoUrl?: string;
 }
@@ -33,7 +35,8 @@ export const GATES: readonly Gate[] = [
     rank: "E",
     tech: ["React", "Vite", "CSS"],
     difficulty: 1,
-    status: "planned",
+    status: "live",
+    demo: "dailyQuestTracker",
   },
   {
     id: "lesserPortal",

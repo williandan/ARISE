@@ -254,5 +254,23 @@
     "githubLabel": "GitHub",
     "cta": "Send an email",
     "note": "The summoning form arrives in a later phase — for now, the call goes straight to email."
+  },
+  "dqt": {
+    "liveDemo": "Live demo",
+    "intro": "This Gate actually runs. Complete daily quests to earn XP and level up — the System's mechanic, in miniature.",
+    "level": "Level",
+    "completedToday": "{done}/{total} done today",
+    "addPlaceholder": "New daily quest...",
+    "add": "Add",
+    "newDay": "New day",
+    "reset": "Reset",
+    "empty": "No quests yet. Add your first one!",
+    "streak": "{n}",
+    "remove": "Remove quest",
+    "toggle": "Complete quest",
+    "xpEach": "+{xp} XP per quest",
+    "seed1": "Drink water",
+    "seed2": "Read for 20 minutes",
+    "seed3": "Exercise"
   }
 }
