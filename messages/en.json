@@ -281,8 +281,6 @@
     "password": "Password",
     "login": "Sign in",
     "register": "Create account",
-    "toRegister": "No account? Create one",
-    "toLogin": "Already have an account? Sign in",
     "logout": "Sign out",
     "loggedInAs": "Signed in as {email}",
     "recordTitlePlaceholder": "Record title",
@@ -293,7 +291,6 @@
     "cancel": "Cancel",
     "delete": "Delete",
     "empty": "No records yet. Create the first one!",
-    "records": "Records",
     "loading": "Loading...",
     "errors": {
       "invalid_email": "Invalid email.",

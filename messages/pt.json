@@ -281,8 +281,6 @@
     "password": "Senha",
     "login": "Entrar",
     "register": "Criar conta",
-    "toRegister": "Não tem conta? Criar uma",
-    "toLogin": "Já tem conta? Entrar",
     "logout": "Sair",
     "loggedInAs": "Conectado como {email}",
     "recordTitlePlaceholder": "Título do registro",
@@ -293,7 +291,6 @@
     "cancel": "Cancelar",
     "delete": "Excluir",
     "empty": "Nenhum registro ainda. Crie o primeiro!",
-    "records": "Registros",
     "loading": "Carregando...",
     "errors": {
       "invalid_email": "E-mail inválido.",

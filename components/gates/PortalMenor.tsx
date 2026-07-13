@@ -75,16 +75,20 @@ export function PortalMenor() {
     if (!token) return;
     let alive = true;
     (async () => {
-      const res = await fetch("/api/portal/items", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      if (!alive) return;
-      if (res.status === 401) {
-        endSession();
-        return;
+      try {
+        const res = await fetch("/api/portal/items", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (!alive) return;
+        if (res.status === 401) {
+          endSession();
+          return;
+        }
+        const data = await res.json().catch(() => null);
+        if (alive) setItems(data?.items ?? []);
+      } catch {
+        if (alive) setError("generic");
       }
-      const data = await res.json().catch(() => null);
-      if (alive) setItems(data?.items ?? []);
     })();
     return () => {
       alive = false;
@@ -159,7 +163,10 @@ export function PortalMenor() {
       });
       if (res.status === 401) return endSession();
       const data = await res.json().catch(() => null);
-      if (!res.ok) return;
+      if (!res.ok) {
+        setError(data?.error ?? "generic");
+        return;
+      }
       setItems((prev) => prev.map((i) => (i.id === id ? data.item : i)));
       setEditingId(null);
     } catch {
@@ -237,7 +244,11 @@ export function PortalMenor() {
               />
             </label>
 
-            {error && <p className="text-alert text-xs">{errMsg(error)}</p>}
+            {error && (
+              <p role="alert" className="text-alert text-xs">
+                {errMsg(error)}
+              </p>
+            )}
 
             <button type="submit" disabled={busy} className={`${primaryBtn} mt-1`}>
               {busy ? t("loading") : t(mode)}
@@ -279,7 +290,11 @@ export function PortalMenor() {
                   {t("add")}
                 </button>
               </div>
-              {error && <p className="text-alert text-xs">{errMsg(error)}</p>}
+              {error && (
+                <p role="alert" className="text-alert text-xs">
+                  {errMsg(error)}
+                </p>
+              )}
             </form>
 
             {items.length === 0 ? (
