@@ -16,9 +16,16 @@ export const MONARCH = {
     github: "https://github.com/williandan",
   },
   stats: {
-    /** Total de Gates catalogados. */
+    /** Gates conquistados pelo Monarca (flavor: tudo limpo). */
+    gatesCleared: 24,
+    gatesTotal: 24,
+    /** Habilidades dominadas. */
+    skillsMastered: 28,
+    skillsTotal: 28,
+  },
+  /** Referências reais do site (catálogo). */
+  catalog: {
     gates: GATES.length,
-    /** Atributos da Skill Tree. */
     skills: SKILLS.length,
   },
 } as const;
