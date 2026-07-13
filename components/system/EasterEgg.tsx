@@ -26,6 +26,7 @@ export function EasterEgg() {
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
+      if (e.repeat) return; // ignora auto-repeat de tecla segurada
       const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
       progress.current =
         key === KONAMI[progress.current] ? progress.current + 1 : key === KONAMI[0] ? 1 : 0;

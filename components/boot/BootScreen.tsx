@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useGameStore } from "@/store/gameStore";
@@ -30,6 +31,7 @@ export function BootScreen() {
 
   const show = hasHydrated && !bootSeen;
   const rank = rankForLevel(level);
+  const acceptRef = useRef<HTMLButtonElement>(null);
 
   function accept() {
     completeQuest("awaken");
@@ -42,6 +44,23 @@ export function BootScreen() {
     completeQuest("awaken");
     skipIntro();
   }
+
+  // Acessibilidade: foca o "aceitar" ao abrir, Escape = pular, trava o scroll.
+  useEffect(() => {
+    if (!show) return;
+    acceptRef.current?.focus();
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") skip();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = prevOverflow;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [show]);
 
   const appear = (delay: number) =>
     reduceMotion
@@ -115,6 +134,7 @@ export function BootScreen() {
 
                 <div className="mt-8 flex gap-4">
                   <button
+                    ref={acceptRef}
                     type="button"
                     onClick={accept}
                     className="font-display flex-1 text-sm font-bold tracking-[0.25em] text-[#05060a] uppercase transition-transform hover:scale-[1.02]"
