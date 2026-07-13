@@ -24,6 +24,30 @@ interface Quest {
   streak: number;
 }
 
+/** Valida/coage dados vindos do localStorage (chave pública, pode vir corrompida). */
+function parseState(raw: string): { quests: Quest[]; totalXp: number } | null {
+  try {
+    const s = JSON.parse(raw) as unknown;
+    if (!s || typeof s !== "object") return null;
+    const obj = s as { quests?: unknown; totalXp?: unknown };
+    const quests: Quest[] = Array.isArray(obj.quests)
+      ? obj.quests.map((q) => {
+          const item = (q ?? {}) as Partial<Quest>;
+          return {
+            id: typeof item.id === "string" ? item.id : crypto.randomUUID(),
+            title: typeof item.title === "string" ? item.title : "",
+            done: item.done === true,
+            streak: Number.isFinite(item.streak) ? (item.streak as number) : 0,
+          };
+        })
+      : [];
+    const totalXp = Number.isFinite(obj.totalXp) ? (obj.totalXp as number) : 0;
+    return { quests, totalXp };
+  } catch {
+    return null;
+  }
+}
+
 export function DailyQuestTracker() {
   const t = useTranslations("dqt");
   const [quests, setQuests] = useState<Quest[]>([]);
@@ -36,24 +60,20 @@ export function DailyQuestTracker() {
   // hydration mismatch com o SSR — daí o setState aqui ser intencional.
   /* eslint-disable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const s = JSON.parse(raw) as { quests?: Quest[]; totalXp?: number };
-        setQuests(s.quests ?? []);
-        setTotalXp(s.totalXp ?? 0);
-      } else {
-        setQuests(
-          [t("seed1"), t("seed2"), t("seed3")].map((title) => ({
-            id: crypto.randomUUID(),
-            title,
-            done: false,
-            streak: 0,
-          })),
-        );
-      }
-    } catch {
-      /* ignore storage/parse errors */
+    const raw = localStorage.getItem(STORAGE_KEY);
+    const parsed = raw ? parseState(raw) : null;
+    if (parsed) {
+      setQuests(parsed.quests);
+      setTotalXp(parsed.totalXp);
+    } else {
+      setQuests(
+        [t("seed1"), t("seed2"), t("seed3")].map((title) => ({
+          id: crypto.randomUUID(),
+          title,
+          done: false,
+          streak: 0,
+        })),
+      );
     }
     setLoaded(true);
   }, []);
@@ -86,7 +106,9 @@ export function DailyQuestTracker() {
   }
 
   function removeQuest(id: string) {
+    const q = quests.find((x) => x.id === id);
     setQuests((prev) => prev.filter((x) => x.id !== id));
+    if (q?.done) setTotalXp((x) => Math.max(0, x - XP_PER_QUEST));
   }
 
   function newDay() {
@@ -116,7 +138,7 @@ export function DailyQuestTracker() {
               </span>
             </div>
             <Bar
-              value={xpInLevel}
+              value={(xpInLevel / XP_PER_LEVEL) * 100}
               fill={CYAN}
               height={8}
               glow={`0 0 10px ${CYAN}`}
@@ -158,7 +180,7 @@ export function DailyQuestTracker() {
                 <button
                   type="button"
                   onClick={() => toggle(q.id)}
-                  aria-label={t("toggle")}
+                  aria-label={`${t("toggle")}: ${q.title}`}
                   aria-pressed={q.done}
                   className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border text-xs transition-all ${
                     q.done
@@ -166,7 +188,7 @@ export function DailyQuestTracker() {
                       : "hover:border-cyan/60 border-white/20 text-transparent"
                   }`}
                 >
-                  ✓
+                  <span aria-hidden>✓</span>
                 </button>
                 <span
                   className={`flex-1 text-sm ${q.done ? "text-muted line-through" : "text-ink"}`}
@@ -174,10 +196,7 @@ export function DailyQuestTracker() {
                   {q.title}
                 </span>
                 {q.streak > 0 && (
-                  <span
-                    className="font-numeric text-[11px] font-bold text-orange-400"
-                    title={`streak ${q.streak}`}
-                  >
+                  <span className="font-numeric text-[11px] font-bold text-orange-400">
                     🔥 {t("streak", { n: q.streak })}
                   </span>
                 )}
