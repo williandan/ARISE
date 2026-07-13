@@ -19,7 +19,15 @@
     "c": "Rank C",
     "b": "Rank B",
     "a": "Rank A",
-    "s": "Rank S"
+    "s": "Rank S",
+    "meaning": {
+      "e": "Awakened",
+      "d": "Scout",
+      "c": "Vanguard",
+      "b": "Elite",
+      "a": "National",
+      "s": "Monarch"
+    }
   },
   "home": {
     "kicker": "The System has noticed you",
@@ -117,22 +125,40 @@
     "contact": "Contact"
   },
   "profile": {
-    "role": "The Monarch — owner of this System",
-    "titles": {
-      "monarch": "MONARCH",
-      "sovereign": "SOVEREIGN",
-      "max": "MAX"
-    },
-    "statsGates": "Gates",
-    "statsSkills": "Skills",
-    "statsRank": "Rank",
-    "rankPathTitle": "Rank Path",
+    "eyebrow": "MONARCH PROFILE",
+    "id": "ID · WD-0001",
+    "sRank": "S-RANK MONARCH",
+    "roleTitle": "Full Stack Developer",
+    "tagline": "The System bends to your will. Every gate has fallen.",
+    "plaque": "MONARCH · SOVEREIGN",
+    "max": "MAX",
+    "plaqueCaption": "All gates conquered · status locked at the summit",
+    "gatesCleared": "GATES CLEARED",
+    "skillsLabel": "SKILLS",
+    "explore": "EXPLORE THE GATES",
+    "resume": "VIEW RÉSUMÉ",
+    "playerVisitor": "PLAYER · VISITOR",
+    "rankPathTitle": "RANK PATH",
+    "rankPathSub": "Climb from E to the Monarch",
     "you": "YOU",
-    "hint": "Above is the Monarch (fixed S-rank). You are the Player in the HUD — climb from E to S by exploring the Gates."
+    "activeQuest": "ACTIVE QUEST",
+    "questProgress": "{done} of {total} objectives complete",
+    "allDone": "All main quests complete",
+    "statsRank": "Rank"
   },
   "gates": {
     "title": "Gates",
-    "subtitle": "Each project is a Dungeon ranked E–S. The stronger ones unlock as you level up.",
+    "subtitle": "Each project is a dungeon. Clear Gates to earn XP.",
+    "detected": "{n} DETECTED",
+    "unlocked": "UNLOCKED",
+    "lockedLabel": "LOCKED",
+    "enter": "ENTER GATE",
+    "diff": "DIFF",
+    "gate": "GATE",
+    "boss": "BOSS",
+    "reachRank": "REACH RANK {rank} TO UNLOCK",
+    "gatesCleared": "GATES CLEARED",
+    "footerHint": "Clear unlocked Gates to rank up and open the next ones.",
     "unlockAt": "Unlocks at Rank {rank} · Lv. {level}",
     "viewAnyway": "View anyway",
     "open": "Enter the Gate",
@@ -183,34 +209,22 @@
   },
   "skills": {
     "title": "Skill Tree",
-    "subtitle": "The Hunter's attributes, translated straight from the CV.",
-    "spellsTitle": "Unlocked spells",
+    "subtitle": "The Hunter's attributes.",
+    "attributesChip": "{n} ATTRIBUTES",
+    "monarchMastery": "MONARCH MASTERY",
+    "highest": "HIGHEST",
+    "spellsTitle": "Unlocked skills",
     "educationTitle": "Education (the Hunter's lore)",
     "education": {
       "ucb": "B.Sc. in Software Engineering — Catholic University of Brasília (2025–2028)",
       "cubos": "Full Stack program — Cubos Academy (2023)"
     },
     "attrs": {
-      "str": {
-        "name": "STR · Back-end",
-        "desc": "APIs, servers and data."
-      },
-      "agi": {
-        "name": "AGI · Front-end",
-        "desc": "Interfaces in React and TypeScript."
-      },
-      "int": {
-        "name": "INT · Integrations & Automation",
-        "desc": "The highest attribute — connecting and automating systems."
-      },
-      "vit": {
-        "name": "VIT · Quality & DevOps",
-        "desc": "Testing, CI/CD and version control."
-      },
-      "per": {
-        "name": "PER · Data analysis",
-        "desc": "Automated reports and indicators."
-      }
+      "str": { "name": "Back-end" },
+      "agi": { "name": "Front-end" },
+      "int": { "name": "Integrations & Automation" },
+      "vit": { "name": "Quality & DevOps" },
+      "per": { "name": "Data Analysis" }
     },
     "spells": {
       "reduction90": {

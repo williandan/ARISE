@@ -19,7 +19,15 @@
     "c": "Rank C",
     "b": "Rank B",
     "a": "Rank A",
-    "s": "Rank S"
+    "s": "Rank S",
+    "meaning": {
+      "e": "Despertado",
+      "d": "Batedor",
+      "c": "Vanguarda",
+      "b": "Elite",
+      "a": "Nacional",
+      "s": "Monarca"
+    }
   },
   "home": {
     "kicker": "O Sistema reconheceu você",
@@ -117,22 +125,40 @@
     "contact": "Contato"
   },
   "profile": {
-    "role": "O Monarca — dono deste Sistema",
-    "titles": {
-      "monarch": "MONARCH",
-      "sovereign": "SOVEREIGN",
-      "max": "MAX"
-    },
-    "statsGates": "Gates",
-    "statsSkills": "Skills",
-    "statsRank": "Rank",
-    "rankPathTitle": "Rank Path",
+    "eyebrow": "PERFIL DO MONARCA",
+    "id": "ID · WD-0001",
+    "sRank": "MONARCA RANK S",
+    "roleTitle": "Desenvolvedor Full Stack",
+    "tagline": "O Sistema se curva à sua vontade. Todos os gates caíram.",
+    "plaque": "MONARCA · SOBERANO",
+    "max": "MAX",
+    "plaqueCaption": "Todos os gates conquistados · status fixo no topo",
+    "gatesCleared": "GATES LIMPOS",
+    "skillsLabel": "SKILLS",
+    "explore": "EXPLORAR OS GATES",
+    "resume": "VER CURRÍCULO",
+    "playerVisitor": "JOGADOR · VISITANTE",
+    "rankPathTitle": "CAMINHO DE RANK",
+    "rankPathSub": "Suba de E até o Monarca",
     "you": "VOCÊ",
-    "hint": "Acima está o Monarca (S-rank fixo). Você é o Jogador no HUD — suba de E até S explorando os Gates."
+    "activeQuest": "MISSÃO ATIVA",
+    "questProgress": "{done} de {total} objetivos concluídos",
+    "allDone": "Todas as missões principais concluídas",
+    "statsRank": "Rank"
   },
   "gates": {
     "title": "Gates",
-    "subtitle": "Cada projeto é uma Dungeon com rank E–S. Os mais fortes se abrem conforme você sobe de nível.",
+    "subtitle": "Cada projeto é uma dungeon. Limpe os Gates para ganhar XP.",
+    "detected": "{n} DETECTADOS",
+    "unlocked": "DESBLOQUEADO",
+    "lockedLabel": "BLOQUEADO",
+    "enter": "ENTRAR",
+    "diff": "DIF",
+    "gate": "GATE",
+    "boss": "BOSS",
+    "reachRank": "ALCANCE O RANK {rank} PARA DESBLOQUEAR",
+    "gatesCleared": "GATES LIMPOS",
+    "footerHint": "Limpe os Gates desbloqueados para subir de rank e abrir os próximos.",
     "unlockAt": "Abre no Rank {rank} · Nv. {level}",
     "viewAnyway": "Ver mesmo assim",
     "open": "Entrar no Gate",
@@ -183,34 +209,22 @@
   },
   "skills": {
     "title": "Skill Tree",
-    "subtitle": "Os atributos do Hunter, traduzidos direto do CV.",
-    "spellsTitle": "Feitiços desbloqueados",
+    "subtitle": "Os atributos do Hunter.",
+    "attributesChip": "{n} ATRIBUTOS",
+    "monarchMastery": "MAESTRIA DO MONARCA",
+    "highest": "MAIOR",
+    "spellsTitle": "Habilidades desbloqueadas",
     "educationTitle": "Formação (lore do Hunter)",
     "education": {
       "ucb": "Bacharelado em Engenharia de Software — Universidade Católica de Brasília (2025–2028)",
       "cubos": "Formação Full Stack — Cubos Academy (2023)"
     },
     "attrs": {
-      "str": {
-        "name": "STR · Back-end",
-        "desc": "APIs, servidores e dados."
-      },
-      "agi": {
-        "name": "AGI · Front-end",
-        "desc": "Interfaces em React e TypeScript."
-      },
-      "int": {
-        "name": "INT · Integrações & Automação",
-        "desc": "O atributo mais alto — conectar e automatizar sistemas."
-      },
-      "vit": {
-        "name": "VIT · Qualidade & DevOps",
-        "desc": "Testes, CI/CD e versionamento."
-      },
-      "per": {
-        "name": "PER · Análise de dados",
-        "desc": "Relatórios automatizados e indicadores."
-      }
+      "str": { "name": "Back-end" },
+      "agi": { "name": "Front-end" },
+      "int": { "name": "Integrações & Automação" },
+      "vit": { "name": "Qualidade & DevOps" },
+      "per": { "name": "Análise de Dados" }
     },
     "spells": {
       "reduction90": {
