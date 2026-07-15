@@ -272,5 +272,33 @@
     "seed1": "Drink water",
     "seed2": "Read for 20 minutes",
     "seed3": "Exercise"
+  },
+  "portal": {
+    "liveDemo": "Live demo",
+    "intro": "A full REST API with JWT authentication and CRUD, served by Next Route Handlers and consumed by this front end. Create an account and manage your records.",
+    "demoNote": "Ephemeral demo — use a fake email and password. Data lives in memory and is lost when the server restarts.",
+    "email": "Email",
+    "password": "Password",
+    "login": "Sign in",
+    "register": "Create account",
+    "logout": "Sign out",
+    "loggedInAs": "Signed in as {email}",
+    "recordTitlePlaceholder": "Record title",
+    "recordNotePlaceholder": "Note (optional)",
+    "add": "Add",
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "empty": "No records yet. Create the first one!",
+    "loading": "Loading...",
+    "errors": {
+      "invalid_email": "Invalid email.",
+      "weak_password": "Password must be at least 4 characters.",
+      "email_taken": "Email already registered.",
+      "invalid_credentials": "Wrong email or password.",
+      "title_required": "Title is required.",
+      "generic": "Something went wrong. Please try again."
+    }
   }
 }
